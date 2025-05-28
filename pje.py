@@ -1,6 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
+import smtplib
+from email.mime.text import MIMEText
 
 app = Flask(__name__)
+app.secret_key = 'sua_chave_secreta'  # Necessário para usar flash messages
 
 @app.route('/')
 def home():
@@ -30,15 +33,45 @@ def comochegar():
 def folheto():
     return render_template('folheto.html', current_page='folheto')
 
-@app.route('/contato')
+@app.route('/contato', methods=['GET', 'POST'])
 def contato():
-    return render_template('contato.html', current_page='contato')
+    if request.method == 'POST':
+        nome = request.form.get('nome')
+        telefone = request.form.get('telefone')
+        email = request.form.get('email')
+        mensagem = request.form.get('mensagem')
 
-# ... demais rotas com current_page adequado
+        corpo_email = f"""
+Nome: {nome}
+Telefone: {telefone}
+E-mail: {email}
+
+Mensagem:
+{mensagem}
+"""
+
+        msg = MIMEText(corpo_email)
+        msg['Subject'] = 'Nova mensagem do formulário de contato'
+        msg['From'] = 'biratan1995@gmail.com'  # seu Gmail
+        msg['To'] = 'biratan1995@gmail.com'    # destinatário
+
+        try:
+            smtp = smtplib.SMTP('smtp.gmail.com', 587)
+            smtp.starttls()
+            smtp.login('biratan1995@gmail.com', 'ohczfvjzmjlgfptl')  # senha de app gerada
+            smtp.send_message(msg)
+            smtp.quit()
+            flash('Mensagem enviada com sucesso!', 'success')
+        except Exception as e:
+            print(f'Erro: {e}')  # Mostra erro no terminal
+            flash(f'Erro ao enviar a mensagem: {e}', 'danger')
+
+        return redirect(url_for('contato'))
+
+    return render_template('contato.html', current_page='contato')
 
 import os
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
-
