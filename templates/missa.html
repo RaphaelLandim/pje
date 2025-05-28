@@ -1,0 +1,128 @@
+{% extends "basepadrao.html" %}
+
+{% block title %}PJE - Folhetos{% endblock %}
+
+{% block content %}
+
+
+<main class="container my-4">
+  <!-- Banner -->
+  <div class="card-douradop card">
+    <div class="container my-5">
+      <h1 class="mb-3">Horários das Missas</h1>
+      <p class="mb-0">Confira os horários em que celebramos a Santa Missa. Todos são bem-vindos!</p>
+    </div>
+  </div>
+  <!-- ===== Card – Domingo ===== -->
+
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-0"><!-- *** Missas por dia – 3 cards por linha em ≥ md *** -->
+
+<div class="col">
+  <div class="h-100 borda-dourada p-2 rounded-4">
+    <div class="card-body text-center">
+      <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
+      <h5 class="card-title mb-1">Missas Dominicais</h5>
+      <p class="descricao  bold">
+         <strong class="destaque-dia">Sábado -></strong>
+        <span class="horario">🕢 18h00</span>
+      </p>
+      <p class="descricao  ">
+         <strong class="destaque-dia">Domingo -></strong>
+        <span class="horario">🕢 8h00</span>
+        <span class="horario">🕢 10h00</span>
+        <span class="horario">🕢 18h00</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+  <!-- ===== Card – Segunda-feira ===== -->
+  <div class="col">
+          <div class="h-100 borda-dourada p-2 rounded-4 ">
+      <div class="card-body text-center">
+       <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
+        <h5 class="card-title mb-1">Segunda-Feira</h5>
+         <p class="descricao">Missa das Almas &amp; procissão das velas</p>
+        <p class="horario mb-0">🕢 18h00</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Card – Terça-feira ===== -->
+  <div class="col">
+    <div class="h-100 borda-dourada p-2 rounded-4 ">
+      <div class="card-body text-center">
+        <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
+        <h5 class="card-title mb-1">Terça-Feira & Sexta-Feira</h5>
+         <p class="descricao">Santa Missa</p>
+        <p class="horario mb-0">🕢 18h00</p>
+      </div>
+    </div>
+  </div>
+
+    <!-- ===== Card – Quarta-feira ===== -->
+  <div class="col">
+    <div class="h-100 borda-dourada p-2 rounded-4 ">
+      <div class="card-body text-center">
+        <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
+        <h5 class="card-title mb-1">Quarta-Feira</h5>
+      <p class="descricao">
+         <Span>Santa Missa -></Span>
+        <span class="horario">🕢 8h00</span>
+      </p>
+      <p class="descricao  ">
+         <Span>Santa Missa na Capela <br>Nossa Senhora das Graças<br>e Santa Dulce dos Pobres<br></Span>
+        <span class="horario">🕢 15h00</span>
+      </p>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Card – Quinta-feira ===== -->
+<div class="col">
+  <div class="h-100 borda-dourada p-2 rounded-4">
+    <div class="card-body text-center">
+      <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
+      <h5 class="card-title mb-1">Quinta Eucarística</h5>
+      <p class="descricao">
+         <Span>Santa Missa -></Span>
+        <span class="horario">🕢 8h00</span>
+      </p>
+      <p class="descricao  ">
+         <Span>Terço da Misericórdia -></Span>
+        <span class="horario">🕢 15h00</span>
+      </p>
+      <p class="descricao  bold">
+         <Span>Terço Mariano -></Span>
+        <span class="horario">🕢 17h00</span>
+      </p>
+      <p class="descricao  ">
+         <Span>Santa Missa com Bençao do Santíssimo -></Span>
+        <span class="horario">🕢 8h00</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+    <!-- ===== Card – Sábado ===== -->
+  <div class="col">
+    <div class="h-100 borda-dourada p-2 rounded-4 ">
+      <div class="card-body text-center">
+        <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
+        <h5 class="card-title mb-1">Sábado</h5>
+        <p class="descricao">Santa Missa na Capela <br>Nossa Senhora das Graças<br>e Santa Dulce dos Pobres</p>
+        <p class="horario mb-0">
+          🕖 10h00<br>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}

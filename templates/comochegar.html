@@ -1,0 +1,41 @@
+{% extends "basepadrao.html" %}
+
+{% block title %}Como Chegar - Jesus Eucaristia{% endblock %}
+
+{% block content %}
+
+<main class="container my-4">
+
+  <!-- Primeiro Card -->
+  <div class="card-douradop card mb-4">
+    <div class="container my-5">
+      <h1 class="mb-3">Como Chegar</h1>
+      <p class="mb-0">Confira o endereço e veja no mapa como chegar até a nossa paróquia.</p>
+    </div>
+  </div>
+
+  <!-- Segundo Card -->
+  <div class="card-dourado p-4 card">
+    <h4 class="mb-3">Endereço</h4>
+    <address class="fs-5 mb-4" style="line-height: 1.6;">
+      Rua Teixeira Bastos, 38<br>
+      Engenho de Dentro, Rio de Janeiro - RJ<br>
+      CEP: 20770-120
+    </address>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.571472306539!2d-43.32025758505314!3d-22.884060385013526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f1a4a6f52af%3A0xf2544e990d52a3a8!2sRua%20Teixeira%20Bastos%2C%2038%20-%20Engenho%20de%20Dentro%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2020770-120!5e0!3m2!1spt-BR!2sbr!4v1685027000000!5m2!1spt-BR!2sbr"
+      width="100%"
+      height="350"
+      style="border:0; border-radius: 12px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Mapa do endereço Rua Teixeira Bastos, 38">
+    </iframe>
+  </div>
+
+</main>
+
+
+{% endblock %}

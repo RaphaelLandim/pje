@@ -1,0 +1,225 @@
+{% extends "basepadrao.html" %}
+
+{% block title %}Home - Jesus Eucaristia{% endblock %}
+
+{% block content %}
+
+<main class="container my-3"></main>
+<!-- Banner principal com carrossel de imagens -->
+<section class="banner-celebracoes">
+  <div class="overlay"></div>
+  <div class="conteudo-banner">
+    <h2 class="titulo-banner"></h2>
+    <p class="descricao-banner"></p>
+  </div>
+
+  <div class="carousel-wrapper">
+    <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{ url_for('static', filename='banner1.jpg') }}" alt="Celebração no Jesus Eucaristia - Banner 1" class="d-block w-100 h-100">
+        </div>
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='banner2.jpg') }}" alt="Celebração no Jesus Eucaristia - Banner 2" class="d-block w-100 h-100">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Apresentação da Comunidade -->
+<section class="container my-5">
+  <h2 class="text-center mb-4 card-dourado">Quem Somos</h2>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <p class="lead">
+        A Paróquia Jesus Eucaristia é um espaço de fé, acolhimento e comunhão. Nossa missão é fortalecer o encontro pessoal 
+        com Cristo e promover a vivência do Evangelho em nossa comunidade.
+      </p>
+      <p>
+        Junte-se a nós nas celebrações, grupos de oração e ações sociais. Aqui, você encontrará um lugar para crescer espiritualmente e viver a alegria da fé.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='Banner/igreja.jpg') }}" alt="Foto da Igreja" class="img-fluid rounded shadow">
+    </div>
+  </div>
+</section>
+
+<!-- Próximos Eventos -->
+<section class="container my-5">
+  <h2 class="text-center mb-4 card-dourado">Próximos Eventos</h2>
+  <div class="row gy-4">
+    <div class="col-md-6">
+      <div class="card shadow h-100">
+        <div class="card-body">
+          <h5 class="card-title">Quinta Eucarística</h5>
+          <p class="card-text"><strong>Data:</strong> Todas as Quintas Feiras</p>
+          <p class="card-text"><strong>Local:</strong> Paróquia Jesus Eucaristia</p>
+          <p>Desfrute de um dia inteiro em profunda adoração ao Santíssimo Sacramento.</p>
+        </div>
+      </div>
+    </div>
+<div class="col-md-6">
+  <div class="card shadow h-100">
+    <div class="card-body">
+      <h5 class="card-title">Corpus Christi</h5>
+      <p class="card-text"><strong>Data:</strong> 8 de junho de 2025</p>
+      <p class="card-text"><strong>Local:</strong> Festa na Rua Teixeira Bastos, 38</p>
+      <p>
+        Venha celebrar a festa do nosso Padroeiro conosco! Teremos barracas com comidas típicas, música, louvor e muita oração. 
+        Participe desse momento especial de adoração e confraternização entre os jovens e toda a comunidade.
+      </p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- Ministérios -->
+<section class="container my-5">
+  <h2 class="text-center mb-4 card-dourado">Ministérios e Grupos</h2>
+  <div class="row gy-4 text-center">
+    <div class="col-md-4">
+      <div class="card shadow h-100 p-3">
+        <h5 class="card-title text-primary">Ministério de Música</h5>
+        <p>Responsável pela animação das celebrações e momentos de louvor.</p>
+        <p><strong>Contato:</strong> musica@jesuseucaristia.org</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow h-100 p-3">
+        <h5 class="card-title text-primary">Pastoral da Criança</h5>
+        <p>Atendimento e apoio às famílias e crianças da comunidade.</p>
+        <p><strong>Contato:</strong> pastoral.crianca@jesuseucaristia.org</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow h-100 p-3">
+        <h5 class="card-title text-primary">Grupo de Oração</h5>
+        <p>Reuniões semanais para louvor, intercessão e fortalecimento da fé.</p>
+        <p><strong>Contato:</strong> grupo.oracao@jesuseucaristia.org</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mensagem do Padre -->
+<section class="container my-5">
+  <h2 class="text-center mb-4 card-dourado">Mensagem do Padre</h2>
+  <div class="card shadow mx-auto" style="max-width: 700px;">
+    <div class="card-body text-center">
+      <img src="{{ url_for('static', filename='Banner/padre.jpg') }}" alt="Padre" class="rounded-circle mb-3" style="width:120px;">
+      <p class="fst-italic">
+        "Que a paz de Cristo esteja sempre em nossos corações. Venha participar das nossas celebrações e sentir a presença do amor de Deus em sua vida."
+      </p>
+      <p><strong>Pe. Charles Fernando</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- Contato e Redes Sociais -->
+<!-- Contato e Redes Sociais -->
+<section class="container my-5">
+  <h2 class="text-center mb-4 card-dourado">Fale Conosco</h2>
+  <div class="row gy-4">
+    <!-- Informações de contato -->
+    <div class="col-md-6">
+      <div class="card shadow h-100">
+        <div class="card-body">
+          <h5 class="card-title ">Endereço</h5>
+          <p>Rua Teixeira Bastos, 38<br>Bairro Engenho de Dentro, Rio de Janeiro - RJ</p>
+
+          <h5 class="card-title ">Telefone</h5>
+          <p><a href="tel:+55219863169889" class="text-decoration-none text-dark"> (21) 98631-69889</a></p>
+
+          <h5 class="card-title ">E-mail</h5>
+          <p><a href="mailto:pascomje@gmail.com" class="text-decoration-none text-dark"> pascomje@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Redes sociais e newsletter -->
+    <div class="col-md-6">
+      <div class="card shadow h-100">
+        <div class="card-body">
+          <h5 class="card-title ">Redes Sociais</h5>
+          <p>
+            <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="#" class="btn btn-outline-danger btn-sm me-2 mb-2"><i class="bi bi-instagram"></i> Instagram</a>
+            <a href="#" class="btn btn-outline-dark btn-sm mb-2"><i class="bi bi-youtube"></i> YouTube</a>
+          </p>
+
+          <hr>
+
+          <h5 class="card-title ">Assine nossa Newsletter</h5>
+          <form>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Digite seu e-mail" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Receber Novidades</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Seção de horários (já existente) -->
+<section class="container my-5">
+  <h2 class="text-center mb-4 card-dourado">Horários de Funcionamento</h2>
+  <div class="row gy-4">
+    <div class="col-md-4">
+      <div class="card shadow h-100">
+        <div class="card-body">
+          <h4 class="card-title fw-bold text-dark">Missas</h4>
+          <ul class="list-unstyled">
+            <li><strong>Segunda, Terça e Sexta:</strong>18h</li><li>
+              <li><strong>Quarta:</strong> 8h e 18h (18h na Capela)</li>
+              <li><strong>Quinta:</strong> 8h e 18h</li>
+            <li><strong>Sábado:</strong> 10h e 18h (10h na Capela)</li>
+            <li><strong>Domingo:</strong> 8h, 10h e 18</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow h-100">
+        <div class="card-body">
+          <h4 class="card-title fw-bold text-dark">Confissões</h4>
+          <ul class="list-unstyled">
+            <li><strong>Terça a sexta:</strong> 9h às 11h e 15h às 17h</li>
+          </ul>
+          <p class="small text-muted mt-3">
+            *Horários sujeitos a alteração sem aviso prévio. Confirme com a secretaria: <br>
+            <a href="tel:+5521983275989">(21) 98631-69889</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow h-100">
+        <div class="card-body">
+          <h4 class="card-title fw-bold text-dark">Secretaria</h4>
+          <ul class="list-unstyled">
+            <li><strong>Segunda a sexta:</strong> 8h às 18h45 (fechada das 12h às 13h)</li>
+            <li><strong>Sábado:</strong> 8h às 11h45</li>
+            <li><strong>Domingo:</strong> 8h às 12h45</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

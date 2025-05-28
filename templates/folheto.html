@@ -1,0 +1,68 @@
+{% extends "basepadrao.html" %}
+
+{% block title %}PJE - Folhetos{% endblock %}
+
+{% block content %}
+
+<main class="container my-4">
+
+
+  <div class="card-douradop card">
+    <div class="container my-5">
+      <h1 class="mb-3">Folhetos para Download</h1>
+      <p class="mb-0">Nesta seção você encontra os folhetos e materiais da paróquia em formato PDF. Clique no botão para baixar..</p>
+    </div>
+  </div>
+
+  <!-- grade responsiva de cartões -->
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-0">
+
+    {# ----------  ADICIONE/REMOVA BLOCOS COMO ESTES  ---------- #}
+    {# Folheto 1 #}
+    <div class="col">
+      <div class="h-100 borda-dourada p-2 rounded-4 ">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-3">Folheto Litúrgico – Domingo 01</h5>
+          <a class="btn btn-dourado fw-semibold"
+             href="{{ url_for('static', filename='folhetos/folheto-dom-01.pdf') }}"
+             download>
+            <i class="bi bi-file-earmark-arrow-down me-1"></i> Baixar PDF
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {# Folheto 2 #}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-3">Folheto Litúrgico – Domingo 02</h5>
+          <a class="btn btn-dourado fw-semibold"
+             href="{{ url_for('static', filename='folhetos/folheto-dom-02.pdf') }}"
+             download>
+            <i class="bi bi-file-earmark-arrow-down me-1"></i> Baixar PDF
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {# Folheto 3 #}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-3">Boletim Paroquial – Maio</h5>
+          <a class="btn btn-dourado fw-semibold"
+             href="{{ url_for('static', filename='folhetos/boletim-maio.pdf') }}"
+             download>
+            <i class="bi bi-file-earmark-arrow-down me-1"></i> Baixar PDF
+          </a>
+        </div>
+      </div>
+    </div>
+    {# ----------  /FIM DO BLOCO EXEMPLO  ---------- #}
+
+  </div>
+</main>
+
+
+{% endblock %}

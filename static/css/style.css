@@ -1,0 +1,248 @@
+/* === CARDS === */
+.card-dourado {
+  background: linear-gradient(135deg, #0a0600, #b8860b);
+  color: #f5e9ca !important;
+}
+
+.card-douradop {
+  text-align: center;
+  align-items: center;
+  min-height: 100px;
+  padding: 0rem;
+  background: linear-gradient(135deg, #0a0600, #b8860b);
+  color: #f5e9ca !important;
+}
+
+.card-dourado a {
+  color: white;
+  text-decoration: underline;
+}
+.card-preto {
+  background: linear-gradient(2515deg, #b8860b, #0a0600);
+  color: #b8860b;
+}
+.card-preto a {
+  color: white;
+  text-decoration: underline;
+}
+.card-title {
+  border-bottom: 2px solid #b88f3b;
+  padding-bottom: 0.5rem;
+  color: #4b3a00;
+  font-weight: 600;
+}
+.card {
+  border: 2px solid #d4af37;
+}
+
+/* === BOTÃO DOURADO === */
+.btn-dourado {
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  color: black;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(184, 134, 11, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-dourado:hover,
+.btn-dourado:focus {
+  background: linear-gradient(135deg, #b8860b, #d4af37);
+  box-shadow: 0 6px 12px rgba(184, 134, 11, 0.6);
+  color: black;
+}
+
+/* === FORMULÁRIOS === */
+.form-control {
+  border: 1.5px solid #b8860b;
+  box-shadow: none;
+  transition: border-color 0.3s ease;
+}
+.form-control:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  outline: none;
+}
+.form-label {
+  font-weight: 600;
+  color: #5a4a00;
+}
+
+/* === TÍTULOS === */
+h4 {
+  color: #4b3a00;
+  font-weight: 700;
+}
+
+/* === BORDA DOURADA === */
+.borda-dourada {
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+  background-color: #f7f4ed;;
+}
+
+/* === IMAGENS === */
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* === BANNER CELEBRAÇÕES === */
+.banner-celebracoes {
+  width: 100vw;
+  background-color: #b88f3b;
+  min-height: 180px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+.titulo-banner {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.descricao-banner {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+/* === SEÇÃO HISTÓRIA === */
+.historia-wrapper {
+  padding: 2rem;
+  background-color: white;
+}
+.historia-section {
+  position: relative;
+  background-image: url("{{ url_for('static', filename='banner1.jpg') }}");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 8px solid #d4af37;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.historia-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.historia-content {
+  position: relative;
+  z-index: 2;
+  color: #d4af37;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: justify;
+  line-height: 1.8;
+  background-color: transparent;
+  border-radius: 0;
+}
+.historia-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #ffd700;
+}
+
+/* === NAVBAR === */
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.navbar .nav-link {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.navbar .nav-link.active:not([href="/"]) {
+  color: #fff !important;
+  background: linear-gradient(to right, #000000, #c19a6b);
+  border-radius: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.navbar .nav-link:hover {
+  text-decoration: underline;
+}
+.navbar-brand img {
+  height: 40px;
+}
+
+.destaque-dia {
+  color: #7c1616; /* exemplo: dourado */
+}
+
+.banner-celebracoes {
+  position: relative;
+  width: 100vw;
+  height: 350px; /* altura fixa */
+  color: white;
+
+  background-image: url('/static/Banner/banner.jpg');
+  background-size: 100% 100%;  /* força o fill (pode distorcer) */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.banner-celebracoes .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.7); /* sombra para escurecer */
+  z-index: 0;
+}
+
+.banner-celebracoes .conteudo-banner {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 2rem;
+}
+
+
+
+
+
+.carousel-wrapper {
+  position: absolute;
+  bottom: 0; /* colado no rodapé do banner */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 900px;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Mantém o tamanho fixo e ajusta a imagem */
+.carousel-inner,
+.carousel-item {
+  height: 350px; /* altura fixa */
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;  /* cobre o espaço, corta o que passar */
+  border-radius: 12px;
+  display: block;    /* elimina espaços em branco indesejados */
+}
+
+

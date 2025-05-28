@@ -1,0 +1,89 @@
+{% extends "basepadrao.html" %}
+
+{% block title %}PJE - Contato{% endblock %}
+
+{% block content %}
+
+<main class="container my-4">
+
+  <!-- Cards de Banner -->
+  <div class="card-douradop card">
+    <div class="container my-5">
+      <h1 class="mb-3">Contato</h1>
+      <p class="mb-0">Fale conosco pelos nossos canais de atendimento. Estamos à disposição para esclarecer todas as suas dúvidas com agilidade e atenção. </p>
+    </div>
+  </div>
+
+  <!-- Cards de Contato -->
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-0">
+    <!-- Secretaria da Igreja -->
+    <div class="col">
+      <div class="card h-100 shadow-sm card-dourado">
+        <div class="card-body">
+          <h5 class="card-title">Secretaria da Igreja</h5>
+          <p class="card-text">Secretaria Onlinea</p>
+          <p><i class="bi bi-telephone-fill"></i> <a href="tel:+5521983275989">(21) 98631-69889</a></p>
+          <p><i class="bi bi-envelope-fill"></i> <a href="mailto:secretaria@jesuseucaristia.org.br">secretaria@jesuseucaristia.org.br</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Administração -->
+    <div class="col">
+      <div class="card h-100 shadow-sm card-dourado">
+        <div class="card-body">
+          <h5 class="card-title">Administração</h5>
+          <p><i class="bi bi-telephone-fill"></i> <a href="tel:+5521983275990">(21) 98631-69889</a></p>
+          <p><i class="bi bi-envelope-fill"></i> <a href="mailto:administracao@jesuseucaristia.org.br">pascomje@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Endereço -->
+    <div class="col">
+      <div class="card h-100  card-dourado">
+        <div class="card-body">
+          <h5 class="card-title">Endereço</h5>
+          <p>Rua Teixeira Bastos, 38<br>Engenho de Dentro, Rio de Janeiro - RJ<br>20770-120</p>
+          <p><strong>Horário de Funcionamento:</strong><br>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulário de Contato -->
+<div class="row mt-5">
+  <div class="col-md-8 offset-md-2">
+    <h4 class="mb-4 text-center p-2 rounded-4 borda-dourada">Envie-nos uma Mensagem</h4>
+
+    <div class="borda-dourada p-4 rounded-4">
+      <form>
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control form-control-lg rounded-pill" id="nome" placeholder="Seu nome">
+        </div>
+        <div class="mb-3">
+          <label for="telefone" class="form-label">Telefone</label>
+          <input type="tel" class="form-control form-control-lg rounded-pill" id="telefone" placeholder="(21) 91234-5678">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" class="form-control form-control-lg rounded-pill" id="email" placeholder="seuemail@exemplo.com">
+        </div>
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Mensagem</label>
+          <textarea class="form-control form-control-lg rounded-3" id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-dourado px-5 py-2 fw-semibold">Enviar Mensagem</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+
+{% endblock %}
