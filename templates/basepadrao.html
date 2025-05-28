@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +20,7 @@
 
 <body class="d-flex flex-column min-vh-100">
 
-  <!-- TOPO -->
+  <!-- CABEÇALHO -->
   <header class="py-3 shadow-sm" style="background: linear-gradient(to right, #000000, #c19a6b);">
     <div class="container d-flex align-items-center justify-content-between flex-wrap">
       <div class="d-flex align-items-center mx-auto text-center text-lg-start">
@@ -48,27 +49,52 @@
     </div>
   </header>
 
-  <!-- MENU -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f5efef;">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
-        aria-controls="menuNavbar" aria-expanded="false" aria-label="Alternar navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="menuNavbar">
-        <ul class="navbar-nav fw-semibold fs-5">
-          <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'home' %}active{% endif %}" href="/">Home</a></li>
-          <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'sobre' %}active{% endif %}" href="/sobre">Sobre</a></li>
-          <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'missa' %}active{% endif %}" href="/missa">Missas</a></li>
-          <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'eventos' %}active{% endif %}" href="/eventos">Eventos</a></li>
-          <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'ministerio' %}active{% endif %}" href="/ministerio">Ministérios</a></li>
-          <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'comochegar' %}active{% endif %}" href="/comochegar">ComoChegar</a></li>
-          <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'folheto' %}active{% endif %}" href="/folheto">Folhetos</a></li>
-          <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'contato' %}active{% endif %}" href="/contato">Contato</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
+ <nav class="navbar navbar-light" style="background-color: #f5efef; position: static !important;">
+  <div class="container">
+
+    <!-- Botão de menu mobile -->
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMobile"
+      aria-controls="menuMobile" aria-label="Alternar navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu desktop -->
+    <ul class="navbar-nav fw-semibold fs-5 mx-auto d-none d-lg-flex flex-row">
+      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'home' %}active{% endif %}" href="/">Home</a></li>
+      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'sobre' %}active{% endif %}" href="/sobre">Sobre</a></li>
+      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'missa' %}active{% endif %}" href="/missa">Missas</a></li>
+      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'eventos' %}active{% endif %}" href="/eventos">Eventos</a></li>
+      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'ministerio' %}active{% endif %}" href="/ministerio">Ministérios</a></li>
+      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'comochegar' %}active{% endif %}" href="/comochegar">ComoChegar</a></li>
+      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'folheto' %}active{% endif %}" href="/folheto">Folhetos</a></li>
+      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'contato' %}active{% endif %}" href="/contato">Contato</a></li>
+    </ul>
+
+
+<!-- Menu mobile (offcanvas) -->
+<div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="menuMobile" aria-labelledby="menuMobileLabel" style="width: 250px;">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title" id="menuMobileLabel">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column p-0 m-0">
+    <a class="btn btn-golden text-start {% if current_page == 'home' %}active{% endif %}" href="/">Home</a>
+    <a class="btn btn-golden text-start {% if current_page == 'sobre' %}active{% endif %}" href="/sobre">Sobre</a>
+    <a class="btn btn-golden text-start {% if current_page == 'missa' %}active{% endif %}" href="/missa">Missas</a>
+    <a class="btn btn-golden text-start {% if current_page == 'eventos' %}active{% endif %}" href="/eventos">Eventos</a>
+    <a class="btn btn-golden text-start {% if current_page == 'ministerio' %}active{% endif %}" href="/ministerio">Ministérios</a>
+    <a class="btn btn-golden text-start {% if current_page == 'comochegar' %}active{% endif %}" href="/comochegar">ComoChegar</a>
+    <a class="btn btn-golden text-start {% if current_page == 'folheto' %}active{% endif %}" href="/folheto">Folhetos</a>
+    <a class="btn btn-golden text-start {% if current_page == 'contato' %}active{% endif %}" href="/contato">Contato</a>
+  </div>
+</div>
+
+  </div>
+</nav>
+
+
+
 
   <!-- CONTEÚDO -->
  
@@ -105,8 +131,8 @@
         <div class="col-md-3">
           <h6 class="fw-bold mb-3"><i class="bi bi-telephone"></i> Contato</h6>
           <p class="small mb-2"><i class="bi bi-geo-alt-fill me-2"></i> Rua Teixeira Bastos, 38 - Engenho de Dentro</p>
-          <p class="small mb-2"><i class="bi bi-telephone-fill me-2"></i> (00) 1234-5678</p>
-          <p class="small"><i class="bi bi-envelope-fill me-2"></i> contato@paroquiajesus.com</p>
+          <p class="small mb-2"><i class="bi bi-telephone-fill me-2"></i> (21) 98631-69889</p>
+          <p class="small"><i class="bi bi-envelope-fill me-2"></i> pascomje@gmail.com</p>
         </div>
 
         <!-- Oração -->
