@@ -222,4 +222,94 @@
   </div>
 </section>
 
+
+
+
+
+<!-- Caixa fixa popup com X para fechar -->
+<div id="donationPopup" class="popup-box">
+  <h3 style="font-size: 1.em; color: #424046; text-align: center; margin-bottom: 4px;">
+  Participe da construção do Templo
+</h3>
+  <button id="closeDonationBtn" class="close-btn" aria-label="Fechar popup">×</button>
+  <img src="{{ url_for('static', filename='Avisos/logo_bra.png') }}" alt="Logo Banco Bradesco" class="bank-logo" />
+  <p><strong>Agência:</strong> 0814 <br> <strong>Conta Corrente:</strong> 0078063-4</p>
+  <p><strong>Pix:</strong> 21 987404210</p>
+  <p class="faith-quote">✨Faça sua contribuição com fé.✨</p>
+</div>
+
+<style>
+  .popup-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f7f4f5; /* rosa bebê bem suave */
+    color: #555052;       /* tom suave de vinho */
+    padding: 18px 24px 24px 24px;
+    border-radius: 0px;
+    box-shadow: 0 6px 15px rgba(128, 66, 90, 0.15);
+    max-width: 300px;
+    font-family: 'Georgia', serif;
+    z-index: 1100;
+    text-align: center;
+    border: transparent; /* borda delicada */
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0a0a0a;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.3s ease;
+  }
+  .close-btn:hover {
+    color: #c287a5;
+  }
+
+  .bank-logo {
+    display: block;
+    margin: 0 auto 8px auto;
+    width: 90px;
+    filter: drop-shadow(0 0 1px rgba(128, 66, 90, 0.1));
+  }
+
+  .popup-box h3 {
+    margin: 0 0 12px 0;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 0.04em;
+    color: #252425;
+  }
+
+  .popup-box p {
+    margin: 6px 0;
+    font-weight: 500;
+    font-size: 1em;
+    color: #252425;
+  }
+
+  .popup-box .faith-quote {
+    margin-top: 10px;
+    font-style: italic;
+    color: #252425;
+    font-size: 0.9em;
+  }
+</style>
+
+<script>
+  const donationPopup = document.getElementById('donationPopup');
+  const closeDonationBtn = document.getElementById('closeDonationBtn');
+
+  closeDonationBtn.addEventListener('click', () => {
+    donationPopup.style.display = 'none';
+  });
+</script>
+
 {% endblock %}
