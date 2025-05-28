@@ -21,7 +21,7 @@
       <div class="card h-100 shadow-sm card-dourado">
         <div class="card-body">
           <h5 class="card-title">Secretaria da Igreja</h5>
-          <p class="card-text">Secretaria Onlinea</p>
+          <p class="card-text">Secretaria Online</p>
           <p><i class="bi bi-telephone-fill"></i> <a href="tel:+5521983275989">(21) 98631-69889</a></p>
           <p><i class="bi bi-envelope-fill"></i> <a href="mailto:secretaria@jesuseucaristia.org.br">secretaria@jesuseucaristia.org.br</a></p>
         </div>
@@ -51,34 +51,72 @@
     </div>
   </div>
 
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} mt-3" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
   <!-- Formulário de Contato -->
 <div class="row mt-5">
   <div class="col-md-8 offset-md-2">
     <h4 class="mb-4 text-center p-2 rounded-4 borda-dourada">Envie-nos uma Mensagem</h4>
 
-    <div class="borda-dourada p-4 rounded-4">
-      <form>
-        <div class="mb-3">
-          <label for="nome" class="form-label">Nome</label>
-          <input type="text" class="form-control form-control-lg rounded-pill" id="nome" placeholder="Seu nome">
-        </div>
-        <div class="mb-3">
-          <label for="telefone" class="form-label">Telefone</label>
-          <input type="tel" class="form-control form-control-lg rounded-pill" id="telefone" placeholder="(21) 91234-5678">
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">E-mail</label>
-          <input type="email" class="form-control form-control-lg rounded-pill" id="email" placeholder="seuemail@exemplo.com">
-        </div>
-        <div class="mb-3">
-          <label for="mensagem" class="form-label">Mensagem</label>
-          <textarea class="form-control form-control-lg rounded-3" id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-dourado px-5 py-2 fw-semibold">Enviar Mensagem</button>
-        </div>
-      </form>
+<div class="borda-dourada p-4 rounded-4">
+  <form method="POST" action="{{ url_for('contato') }}">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input
+        type="text"
+        class="form-control form-control-lg rounded-pill"
+        id="nome"
+        name="nome"
+        placeholder="Seu nome"
+        required
+      >
     </div>
+    <div class="mb-3">
+      <label for="telefone" class="form-label">Telefone</label>
+      <input
+        type="tel"
+        class="form-control form-control-lg rounded-pill"
+        id="telefone"
+        name="telefone"
+        placeholder="(21) 91234-5678"
+      >
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input
+        type="email"
+        class="form-control form-control-lg rounded-pill"
+        id="email"
+        name="email"
+        placeholder="seuemail@exemplo.com"
+        required
+      >
+    </div>
+    <div class="mb-3">
+      <label for="mensagem" class="form-label">Mensagem</label>
+      <textarea
+        class="form-control form-control-lg rounded-3"
+        id="mensagem"
+        name="mensagem"
+        rows="5"
+        placeholder="Escreva sua mensagem aqui..."
+        required
+      ></textarea>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-dourado px-5 py-2 fw-semibold">Enviar Mensagem</button>
+    </div>
+  </form>
+</div>
+
 
   </div>
 </div>
