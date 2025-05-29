@@ -1,128 +1,166 @@
-{% extends "basepadrao.html" %}
 
+{% extends "basepadrao.html" %}
 {% block title %}PJE - Missas{% endblock %}
+
+
+{# --- ESTILO EXCLUSIVO DA PÁGINA --- #}
+{% block extra_styles %}
+<style>
+  /* Hero refinado (se basepadrao.html usar hero_image e afins) */
+.custom-hero {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    background-image: url('{{ url_for("static", filename="img/missa.jpeg") }}');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.65);
+  }
+
+  .custom-hero .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .custom-hero h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-hero p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-shadow: 0 0 6px rgba(0,0,0,0.6);
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-hero-cta {
+    background-color: #3e4b31;
+    border: none;
+    padding: 0.6rem 1.8rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-hero-cta:hover {
+    background-color: #2c3723;
+  }
+
+  /* Fundo e estilo dos cards */
+  .missas-section {
+    background: linear-gradient(180deg, #f9faf7 0%, #e6ebdf 100%);
+    padding: 3rem 0;
+  }
+
+  .missa-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: none;
+    background: #fff;
+    border-radius: 1rem;
+  }
+
+  .missa-card:hover {
+    transform: translateY(-8px) rotateX(3deg);
+    box-shadow: 0 20px 35px rgba(62, 75, 49, 0.3);
+  }
+
+  .missa-card i {
+    font-size: 2.4rem;
+    color: #3e4b31;
+    margin-bottom: 1rem;
+  }
+
+  .missas-intro {
+    color: #3e4b31;
+    font-weight: 600;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+  }
+</style>
+{% endblock %}
 
 {% block content %}
 
-
-<main class="container my-4">
-  <!-- Banner -->
-  <div class="card-douradop card">
-    <div class="container my-5">
-      <h1 class="mb-3">Horários das Missas</h1>
-      <p class="mb-0">Confira os horários em que celebramos a Santa Missa. Todos são bem-vindos!</p>
-    </div>
+<section class="hero position-relative">
+  <img src="{{ url_for('static', filename='img/missa.jpeg') }}" alt="Imagem dos horários das missas" class="w-100">
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white" style="background:rgba(0,0,0,.45);">
+    <h1 class="display-5 fw-bold mb-2">Horários das Missas</h1>
+    <p class="lead mb-4">Venha celebrar a Eucaristia conosco</p>
   </div>
-  <!-- ===== Card – Domingo ===== -->
+</section>
 
 
 
-<div class="row row-cols-1 row-cols-md-3 g-4 mt-0"><!-- *** Missas por dia – 3 cards por linha em ≥ md *** -->
+  <section class="missas-section">
+    <div class="container">
+      <p class="missas-intro lead">Confira os momentos em que celebramos a Santa Missa — <strong>todos são bem-vindos!</strong></p>
 
-<div class="col">
-  <div class="h-100 borda-dourada p-2 rounded-4">
-    <div class="card-body text-center">
-      <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
-      <h5 class="card-title mb-1">Missas Dominicais</h5>
-      <p class="descricao  bold">
-         <strong class="destaque-dia">Sábado -></strong>
-        <span class="horario">🕢 18h00</span>
-      </p>
-      <p class="descricao  ">
-         <strong class="destaque-dia">Domingo -></strong>
-        <span class="horario">🕢 8h00</span>
-        <span class="horario">🕢 10h00</span>
-        <span class="horario">🕢 18h00</span>
-      </p>
-    </div>
-  </div>
-</div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="missa-card h-100 p-4 text-center shadow-sm">
+            <i class="bi bi-sunrise-fill"></i>
+            <h5 class="fw-semibold mb-3">Missas Dominicais</h5>
+            <p class="mb-1"><strong>Sábado:</strong> 🕕 18h00</p>
+            <p class="mb-0"><strong>Domingo:</strong> 🕗 8h00 • 🕙 10h00 • 🕕 18h00</p>
+          </div>
+        </div>
 
+        <div class="col">
+          <div class="missa-card h-100 p-4 text-center shadow-sm">
+            <i class="bi bi-moon-stars-fill"></i>
+            <h5 class="fw-semibold mb-3">Segunda-Feira</h5>
+            <p class="mb-1">Missa das Almas &amp; Procissão das Velas</p>
+            <p class="mb-0">🕕 18h00</p>
+          </div>
+        </div>
 
-  <!-- ===== Card – Segunda-feira ===== -->
-  <div class="col">
-          <div class="h-100 borda-dourada p-2 rounded-4 ">
-      <div class="card-body text-center">
-       <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
-        <h5 class="card-title mb-1">Segunda-Feira</h5>
-         <p class="descricao">Missa das Almas &amp; procissão das velas</p>
-        <p class="horario mb-0">🕢 18h00</p>
+        <div class="col">
+          <div class="missa-card h-100 p-4 text-center shadow-sm">
+            <i class="bi bi-calendar2-week-fill"></i>
+            <h5 class="fw-semibold mb-3">Terça e Sexta-Feira</h5>
+            <p class="mb-1">Santa Missa</p>
+            <p class="mb-0">🕕 18h00</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="missa-card h-100 p-4 text-center shadow-sm">
+            <i class="bi bi-calendar2-check-fill"></i>
+            <h5 class="fw-semibold mb-3">Quarta-Feira</h5>
+            <p class="mb-1">Santa Missa: 🕗 8h00</p>
+            <p class="mb-0">Capela N. Sra. das Graças e Sta. Dulce: 🕒 15h00</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="missa-card h-100 p-4 text-center shadow-sm">
+            <i class="bi bi-easel-fill"></i>
+            <h5 class="fw-semibold mb-3">Quinta Eucarística</h5>
+            <p class="mb-1">Santa Missa: 🕗 8h00</p>
+            <p class="mb-1">Terço da Misericórdia: 🕒 15h00</p>
+            <p class="mb-1">Terço Mariano: 🕔 17h00</p>
+            <p class="mb-0">Santa Missa com Benção: 🕕 18h00</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="missa-card h-100 p-4 text-center shadow-sm">
+            <i class="bi bi-calendar-heart-fill"></i>
+            <h5 class="fw-semibold mb-3">Sábado</h5>
+            <p class="mb-1">Capela N. Sra. das Graças e Sta. Dulce</p>
+            <p class="mb-0">🕙 10h00</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- ===== Card – Terça-feira ===== -->
-  <div class="col">
-    <div class="h-100 borda-dourada p-2 rounded-4 ">
-      <div class="card-body text-center">
-        <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
-        <h5 class="card-title mb-1">Terça-Feira & Sexta-Feira</h5>
-         <p class="descricao">Santa Missa</p>
-        <p class="horario mb-0">🕢 18h00</p>
-      </div>
-    </div>
-  </div>
-
-    <!-- ===== Card – Quarta-feira ===== -->
-  <div class="col">
-    <div class="h-100 borda-dourada p-2 rounded-4 ">
-      <div class="card-body text-center">
-        <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
-        <h5 class="card-title mb-1">Quarta-Feira</h5>
-      <p class="descricao">
-         <Span>Santa Missa -></Span>
-        <span class="horario">🕢 8h00</span>
-      </p>
-      <p class="descricao  ">
-         <Span>Santa Missa na Capela <br>Nossa Senhora das Graças<br>e Santa Dulce dos Pobres<br></Span>
-        <span class="horario">🕢 15h00</span>
-      </p>
-
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== Card – Quinta-feira ===== -->
-<div class="col">
-  <div class="h-100 borda-dourada p-2 rounded-4">
-    <div class="card-body text-center">
-      <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
-      <h5 class="card-title mb-1">Quinta Eucarística</h5>
-      <p class="descricao">
-         <Span>Santa Missa -></Span>
-        <span class="horario">🕢 8h00</span>
-      </p>
-      <p class="descricao  ">
-         <Span>Terço da Misericórdia -></Span>
-        <span class="horario">🕢 15h00</span>
-      </p>
-      <p class="descricao  bold">
-         <Span>Terço Mariano -></Span>
-        <span class="horario">🕢 17h00</span>
-      </p>
-      <p class="descricao  ">
-         <Span>Santa Missa com Bençao do Santíssimo -></Span>
-        <span class="horario">🕢 8h00</span>
-      </p>
-    </div>
-  </div>
-</div>
-
-    <!-- ===== Card – Sábado ===== -->
-  <div class="col">
-    <div class="h-100 borda-dourada p-2 rounded-4 ">
-      <div class="card-body text-center">
-        <i class="fas fa-calendar-day fa-2x icon-dourado mb-3"></i>
-        <h5 class="card-title mb-1">Sábado</h5>
-        <p class="descricao">Santa Missa na Capela <br>Nossa Senhora das Graças<br>e Santa Dulce dos Pobres</p>
-        <p class="horario mb-0">
-          🕖 10h00<br>
-        </p>
-      </div>
-    </div>
-  </div>
-</main>
-
-
+  </section>
 {% endblock %}
