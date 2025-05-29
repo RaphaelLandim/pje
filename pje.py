@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import smtplib
 from email.mime.text import MIMEText
 
+
+
 app = Flask(__name__)
 app.secret_key = 'sua_chave_secreta'  # Necessário para usar flash messages
 
@@ -32,6 +34,11 @@ def comochegar():
 @app.route('/folheto')
 def folheto():
     return render_template('folheto.html', current_page='folheto')
+
+#templates de banner
+@app.route('/doacao')
+def doacao():
+    return render_template('banner/doacao.html', current_page='doacao')
 
 @app.route('/contato', methods=['GET', 'POST'])
 def contato():
@@ -74,4 +81,4 @@ import os
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(debug=True, host="0.0.0.0", port=port)
