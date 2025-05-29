@@ -2,67 +2,139 @@
 
 {% block title %}PJE - Folhetos{% endblock %}
 
+{% block extra_styles %}
+<style>
+  /* Fundo e padding da seção */
+  .folhetos-section {
+    background: linear-gradient(180deg, #f9faf7 0%, #e6ebdf 100%);
+    padding: 4rem 0 6rem 0;
+  }
+
+  /* Hero header */
+  .folhetos-hero {
+    position: relative;
+    height: 280px;
+    background: url('{{ url_for("static", filename="img/folhetos-header.jpg") }}') center/cover no-repeat;
+    filter: brightness(0.65);
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+  }
+  .folhetos-hero .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .folhetos-hero h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    margin-bottom: 0.5rem;
+  }
+  .folhetos-hero p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  }
+
+  /* Cards */
+  .folheto-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(62, 75, 49, 0.15);
+    border: none;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .folheto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(62, 75, 49, 0.3);
+  }
+  .folheto-card .card-body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+  }
+  .folheto-card h5 {
+    color: #3e4b31;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Botão estilizado */
+  .btn-download {
+    background-color: #3e4b31;
+    border: none;
+    padding: 0.65rem 2rem;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .btn-download:hover {
+    background-color: #2c3723;
+    color: #fff;
+  }
+  .btn-download i {
+    font-size: 1.25rem;
+  }
+</style>
+{% endblock %}
+
 {% block content %}
 
-<main class="container my-4">
+<section class="hero position-relative">
+  <img src="{{ url_for('static', filename='img/folheto_hero.jpg') }}" alt="Imagem dos horários das missas" class="w-100">
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white" style="background:rgba(0,0,0,.45);">
+    <h1 class="display-5 fw-bold mb-2">Folhetos para Download</h1>
+    <p class="lead mb-4">Encontre os folhetos e materiais da paróquia em formato PDF. Clique no botão para baixar.</p>
+  </div>
+</section>
 
+<section class="py-5 folhetos-section">
+  <div class="container">
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="folheto-card card h-100 shadow-sm">
+        <div class="card-body">
+          <h5>Folheto Litúrgico – Domingo 01</h5>
+          <a href="{{ url_for('static', filename='folhetos/folheto-dom-01.pdf') }}" download class="btn btn-download mx-auto">
+            <i class="bi bi-file-earmark-arrow-down"></i> Baixar PDF
+          </a>
+        </div>
+      </div>
+    </div>
 
-  <div class="card-douradop card">
-    <div class="container my-5">
-      <h1 class="mb-3">Folhetos para Download</h1>
-      <p class="mb-0">Nesta seção você encontra os folhetos e materiais da paróquia em formato PDF. Clique no botão para baixar..</p>
+    <div class="col">
+      <div class="folheto-card card h-100 shadow-sm">
+        <div class="card-body">
+          <h5>Folheto Litúrgico – Domingo 02</h5>
+          <a href="{{ url_for('static', filename='folhetos/folheto-dom-02.pdf') }}" download class="btn btn-download mx-auto">
+            <i class="bi bi-file-earmark-arrow-down"></i> Baixar PDF
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="folheto-card card h-100 shadow-sm">
+        <div class="card-body">
+          <h5>Boletim Paroquial – Maio</h5>
+          <a href="{{ url_for('static', filename='folhetos/boletim-maio.pdf') }}" download class="btn btn-download mx-auto">
+            <i class="bi bi-file-earmark-arrow-down"></i> Baixar PDF
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- grade responsiva de cartões -->
-  <div class="row row-cols-1 row-cols-md-3 g-4 mt-0">
-
-    {# ----------  ADICIONE/REMOVA BLOCOS COMO ESTES  ---------- #}
-    {# Folheto 1 #}
-    <div class="col">
-      <div class="h-100 borda-dourada p-2 rounded-4 ">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-3">Folheto Litúrgico – Domingo 01</h5>
-          <a class="btn btn-dourado fw-semibold"
-             href="{{ url_for('static', filename='folhetos/folheto-dom-01.pdf') }}"
-             download>
-            <i class="bi bi-file-earmark-arrow-down me-1"></i> Baixar PDF
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {# Folheto 2 #}
-    <div class="col">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-3">Folheto Litúrgico – Domingo 02</h5>
-          <a class="btn btn-dourado fw-semibold"
-             href="{{ url_for('static', filename='folhetos/folheto-dom-02.pdf') }}"
-             download>
-            <i class="bi bi-file-earmark-arrow-down me-1"></i> Baixar PDF
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {# Folheto 3 #}
-    <div class="col">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-3">Boletim Paroquial – Maio</h5>
-          <a class="btn btn-dourado fw-semibold"
-             href="{{ url_for('static', filename='folhetos/boletim-maio.pdf') }}"
-             download>
-            <i class="bi bi-file-earmark-arrow-down me-1"></i> Baixar PDF
-          </a>
-        </div>
-      </div>
-    </div>
-    {# ----------  /FIM DO BLOCO EXEMPLO  ---------- #}
-
-  </div>
-</main>
-
-
+</section>
 {% endblock %}
