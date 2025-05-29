@@ -1,180 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Meta básicos -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" href="/static/logo.png" type="image/png">
+  <title>{% block title %}PJE{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Site oficial da Paróquia Jesus Eucaristia – fé, celebração e comunidade.{% endblock %}">
+  <meta name="theme-color" content="#566547">
 
+  <!-- Google Font: Inter (peso 300-700) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 (CSS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Ícones -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS da aplicação -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <title>{% block title %}Jesus Eucaristia{% endblock %}</title>
-
-
-<link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- FontAwesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  {% block extra_styles %}{% endblock %}
 </head>
-
 <body class="d-flex flex-column min-vh-100">
 
-  <!-- CABEÇALHO -->
-  <header class="py-3 shadow-sm" style="background: linear-gradient(to right, #000000, #c19a6b);">
-    <div class="container d-flex align-items-center justify-content-between flex-wrap">
-      <div class="d-flex align-items-center mx-auto text-center text-lg-start">
-        <a href="/" class="me-3">
-          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="height:100px;">
-        </a>
-        <div>
-          <h3 class="mb-0 fw-bold text-white">Paróquia</h3>
-          <h4 class="mb-0 text-uppercase text-white">Jesus Eucaristia</h4>
+
+
+  <!-- ▸ TOP-BAR (aparece ≥ md) ------------------------------------------------ -->
+  <section class="bg-light py-1 d-none d-md-block small text-muted top-bar">
+    <div class="container d-flex justify-content-end gap-3">
+      <span><i class="bi bi-telephone me-1"></i>(21) 98631-69889</span>
+      <span><i class="bi bi-envelope me-1"></i>pascomje@gmail.com</span>
+    </div>
+  </section>
+
+
+
+  <!-- ▸ NAVBAR ----------------------------------------------------------------- -->
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm custom-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" height="48" class="me-2">
+        <span class="fw-bold text-white">Paróquia <br class="d-none d-xl-block">Jesus Eucaristia</span>
+      </a>
+
+      <!-- toggler com ícone branco -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon" style="filter:invert(1);"></span>
+      </button>
+
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
+          <li class="nav-item"><a class="nav-link {% if current_page == 'home' %}active{% endif %}" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link {% if current_page == 'sobre' %}active{% endif %}" href="/sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link {% if current_page == 'missa' %}active{% endif %}" href="/missa">Missas</a></li>
+          <li class="nav-item"><a class="nav-link {% if current_page == 'eventos' %}active{% endif %}" href="/eventos">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link {% if current_page == 'ministerio' %}active{% endif %}" href="/ministerio">Ministérios</a></li>
+          <li class="nav-item"><a class="nav-link {% if current_page == 'comochegar' %}active{% endif %}" href="/comochegar">Como Chegar</a></li>
+          <li class="nav-item"><a class="nav-link {% if current_page == 'folheto' %}active{% endif %}" href="/folheto">Folhetos</a></li>
+          <li class="nav-item"><a class="nav-link {% if current_page == 'contato' %}active{% endif %}" href="/contato">Contato</a></li>
+        </ul>
+
+        <!-- Redes Sociais (desktop) -->
+        <div class="d-none d-lg-flex ms-3 gap-3 fs-5">
+          <a href="https://www.facebook.com/igrejajesuseucaristia/" class="text-white" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_jesuseucaristia/" class="text-white" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/@paroquiajesuseucaristia" class="text-white" target="_blank"><i class="bi bi-youtube"></i></a>
         </div>
       </div>
-      <div class="d-none d-lg-flex gap-3 fs-4">
-        <a href="https://www.facebook.com/igrejajesuseucaristia/" target="_blank" class="text-white" title="Facebook">
-          <i class="bi bi-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/_jesuseucaristia/" target="_blank" class="text-white" title="Instagram">
-          <i class="bi bi-instagram"></i>
-        </a>
-        <a href="https://www.youtube.com/@paroquiajesuseucaristia" target="_blank" class="text-white" title="YouTube">
-          <i class="bi bi-youtube"></i>
-        </a>
-        <a href="https://paroquiajesuseucaristia.blogspot.com/2025/" target="_blank" class="text-white" title="Blog">
-          <i class="bi bi-journal-text"></i>
-        </a>
-      </div>
     </div>
-  </header>
+  </nav>
 
 
- <nav class="navbar navbar-light" style="background-color: #f5efef; position: static !important;">
-  <div class="container">
 
-    <!-- Botão de menu mobile -->
-    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMobile"
-      aria-controls="menuMobile" aria-label="Alternar navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Menu desktop -->
-    <ul class="navbar-nav fw-semibold fs-5 mx-auto d-none d-lg-flex flex-row">
-      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'home' %}active{% endif %}" href="/">Home</a></li>
-      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'sobre' %}active{% endif %}" href="/sobre">Sobre</a></li>
-      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'missa' %}active{% endif %}" href="/missa">Missas</a></li>
-      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'eventos' %}active{% endif %}" href="/eventos">Eventos</a></li>
-      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'ministerio' %}active{% endif %}" href="/ministerio">Ministérios</a></li>
-      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'comochegar' %}active{% endif %}" href="/comochegar">ComoChegar</a></li>
-      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'folheto' %}active{% endif %}" href="/folheto">Folhetos</a></li>
-      <li class="nav-item mx-3"><a class="nav-link {% if current_page == 'contato' %}active{% endif %}" href="/contato">Contato</a></li>
-    </ul>
-
-
-<!-- Menu mobile (offcanvas) -->
-<div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="menuMobile" aria-labelledby="menuMobileLabel" style="width: 250px;">
-  <div class="offcanvas-header border-bottom">
-    <h5 class="offcanvas-title" id="menuMobileLabel">Menu</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
-  </div>
-  <div class="offcanvas-body d-flex flex-column p-0 m-0">
-    <a class="btn btn-golden text-start {% if current_page == 'home' %}active{% endif %}" href="/">Home</a>
-    <a class="btn btn-golden text-start {% if current_page == 'sobre' %}active{% endif %}" href="/sobre">Sobre</a>
-    <a class="btn btn-golden text-start {% if current_page == 'missa' %}active{% endif %}" href="/missa">Missas</a>
-    <a class="btn btn-golden text-start {% if current_page == 'eventos' %}active{% endif %}" href="/eventos">Eventos</a>
-    <a class="btn btn-golden text-start {% if current_page == 'ministerio' %}active{% endif %}" href="/ministerio">Ministérios</a>
-    <a class="btn btn-golden text-start {% if current_page == 'comochegar' %}active{% endif %}" href="/comochegar">ComoChegar</a>
-    <a class="btn btn-golden text-start {% if current_page == 'folheto' %}active{% endif %}" href="/folheto">Folhetos</a>
-    <a class="btn btn-golden text-start {% if current_page == 'contato' %}active{% endif %}" href="/contato">Contato</a>
-  </div>
-</div>
-
-  </div>
-</nav>
+  <!-- ▸ HERO genérico (pode ser ocultado configurando show_hero=False) --------- -->
 
 
 
 
-  <!-- CONTEÚDO -->
- 
+  <!-- ▸ CONTEÚDO ESPECÍFICO DA VIEW ------------------------------------------- -->
+  <main class="flex-grow-1">
     {% block content %}{% endblock %}
-  
+  </main>
 
-  <!-- RODAPÉ -->
-  <footer class="text-white pt-5 pb-4 mt-auto" style="background: linear-gradient(to right, #000000, #c19a6b);">
+
+
+  <!-- ▸ RODAPÉ ---------------------------------------------------------------- -->
+  <footer class="bg-dark text-white pt-5">
     <div class="container">
       <div class="row gy-4">
 
-        <!-- Paróquia -->
         <div class="col-md-3">
-          <h5 class="fw-bold mb-3"><i class="bi bi-building"></i> Paróquia Jesus Eucaristia</h5>
-          <p class="small fst-italic">Servindo com fé, amor e dedicação na missão de evangelizar.</p>
+          <h5 class="fw-bold mb-3"><i class="bi bi-building"></i> Paróquia</h5>
+          <p class="small">Servindo com fé, amor e dedicação na missão de evangelizar.</p>
         </div>
 
-        <!-- Links -->
         <div class="col-md-2">
-          <h6 class="fw-bold mb-3"><i class="bi bi-link-45deg"></i> Links</h6>
-          <ul class="list-unstyled small">
-            <li><a href="/" class="text-white text-decoration-none hover-underline">Home</a></li>
-            <li><a href="/sobre" class="text-white text-decoration-none hover-underline">Sobre</a></li>
-            <li><a href="/missas" class="text-white text-decoration-none hover-underline">Missas</a></li>
-            <li><a href="/eventos" class="text-white text-decoration-none hover-underline">Eventos</a></li>
-            <li><a href="/ministérios" class="text-white text-decoration-none hover-underline">Ministérios</a></li>
-            <li><a href="/comochegar" class="text-white text-decoration-none hover-underline">ComoChegar</a></li>
-            <li><a href="/folheto" class="text-white text-decoration-none hover-underline">Folhetos</a></li>
-            <li><a href="/contato" class="text-white text-decoration-none hover-underline">Contato</a></li>
+          <h6 class="fw-bold mb-3">Links</h6>
+          <ul class="list-unstyled small lh-lg">
+            <li><a href="/"             class="text-white text-decoration-none">Home</a></li>
+            <li><a href="/sobre"        class="text-white text-decoration-none">Sobre</a></li>
+            <li><a href="/missa"        class="text-white text-decoration-none">Missas</a></li>
+            <li><a href="/comochegar"   class="text-white text-decoration-none">Como Chegar</a></li>
+            <li><a href="/folheto"      class="text-white text-decoration-none">Folhetos</a></li>
+            <li><a href="/contato"      class="text-white text-decoration-none">Contato</a></li>
           </ul>
         </div>
 
-        <!-- Contato -->
         <div class="col-md-3">
-          <h6 class="fw-bold mb-3"><i class="bi bi-telephone"></i> Contato</h6>
-          <p class="small mb-2"><i class="bi bi-geo-alt-fill me-2"></i> Rua Teixeira Bastos, 38 - Engenho de Dentro</p>
-          <p class="small mb-2"><i class="bi bi-telephone-fill me-2"></i> (21) 98631-69889</p>
-          <p class="small"><i class="bi bi-envelope-fill me-2"></i> pascomje@gmail.com</p>
+          <h6 class="fw-bold mb-3">Contato</h6>
+          <p class="small mb-1"><i class="bi bi-geo-alt me-2"></i>Rua Teixeira Bastos, 38 – Engenho de Dentro</p>
+          <p class="small mb-1"><i class="bi bi-telephone me-2"></i>(21) 98631-69889</p>
+          <p class="small"><i class="bi bi-envelope me-2"></i>pascomje@gmail.com</p>
         </div>
 
-        <!-- Oração -->
-        <div class="col-md-4">
-          <h6 class="fw-bold mb-3"><i class="bi bi-heart-fill"></i> Oração</h6>
-          <p class="small" style="white-space: pre-line; line-height: 1.5;">
-Alma de Cristo, santificai-me.
-Corpo de Cristo, salvai-me.
-Sangue de Cristo, inebriai-me.
-Água do lado de Cristo, lavai-me.
-Paixão de Cristo, confortai-me.
-Ó bom Jesus, ouvi-me.
-Dentro de Vossas chagas, escondei-me.
-Não permitais que me separe de Vós.
-Do espírito maligno, defendei-me.
-Na hora da morte, chamai-me,
-e mandai-me ir para Vós,
-para que com Vossos Santos Vos louve,
-por todos os séculos dos séculos. Amém.
-          </p>
-        </div>
-      </div>
+<div class="col-md-4 text-start">
+  <h6 class="fw-bold mb-3">Faça sua Oferta</h6>
 
-      <hr class="border-light mt-4" />
-      <div class="text-center small mt-3">
-        © {{ ano_atual if ano_atual else '2025' }} Paróquia Jesus Eucaristia - Todos os direitos reservados
-      </div>
+  <!-- Logo do banco -->
+  <div class="mb-2">
+    <img src="/static/Avisos/logo_rodape.jpg"
+         alt="Logo Banco Bradesco"
+         class="img-fluid"
+         style="max-height: 40px;">
+  </div>
+
+  <!-- Dados bancários -->
+  <p class="mb-2 lh-sm">
+    <strong>BRADESCO</strong><br>
+    <strong>Agência:</strong> 0814<br>
+    <strong>C/C:</strong> 0078063-4
+  </p>
+
+  <!-- Pix simples, sem caixa -->
+  <div class="d-flex align-items-center">
+    <strong class="me-2">Pix:</strong>
+    <span id="pixKey" class="me-2">21 98740-4210</span>
+    <button id="copyPix" class="btn btn-sm btn-light border px-2 py-0" title="Copiar Pix">📋</button>
+  </div>
+</div>
+
+
+
+
+      <hr class="border-secondary mt-4">
+      <p class="text-center small mb-0">
+        © {{ ano_atual if ano_atual else '2025' }} Paróquia Jesus Eucaristia – Todos os direitos reservados
+      </p>
     </div>
-
-    <!-- Estilos do rodapé -->
-    <style>
-      .hover-underline:hover {
-        text-decoration: underline;
-        color: #f8f9fa !important;
-        transition: color 0.3s ease;
-      }
-    </style>
   </footer>
 
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
+  <!-- ▸ Bootstrap JS ----------------------------------------------------------- -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  {% block extra_scripts %}{% endblock %}
 </body>
 </html>
