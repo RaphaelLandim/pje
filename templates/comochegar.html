@@ -1,41 +1,98 @@
 {% extends "basepadrao.html" %}
+{% block title %}Como Chegar - Jesus Eucaristia{% endblock %}
 
-{% block title %}PJE - Como Chegar{% endblock %}
+{% block extra_styles %}
+<style>
+  .custom-hero {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    background-image: url('{{ url_for("static", filename="img/igreja.jpg") }}');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.65);
+  }
+
+  .custom-hero .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .custom-hero h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-hero p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-shadow: 0 0 6px rgba(0,0,0,0.6);
+    margin-bottom: 1.5rem;
+  }
+
+  .chegar-section {
+    background: linear-gradient(180deg, #f9faf7 0%, #e6ebdf 100%);
+    padding: 3rem 0;
+  }
+
+  .card-endereco {
+    border-radius: 1rem;
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 15px 30px rgba(62, 75, 49, 0.15);
+  }
+
+  .card-endereco h4 {
+    color: #3e4b31;
+    font-weight: 700;
+  }
+
+  .card-endereco address {
+    font-size: 1.125rem;
+    color: #333;
+  }
+</style>
+{% endblock %}
 
 {% block content %}
+<!-- Hero -->
+<section class="hero position-relative">
+  <img src="{{ url_for('static', filename='img/comochegar_hero.jpg') }}" alt="Imagem dos horários das missas" class="w-100">
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white" style="background:rgba(0,0,0,.45);">
+    <h1 class="display-5 fw-bold mb-2">Como chegar</h1>
+    <p class="lead mb-4">Veja o endereço e localização da nossa paróquia</p>
+  </div>
+</section>
 
-<main class="container my-4">
+<!-- Conteúdo principal -->
+<section class="chegar-section">
+  <div class="container">
+    <div class="card-endereco">
+      <h4 class="mb-3">Endereço</h4>
+      <address>
+        Rua Teixeira Bastos, 38<br>
+        Engenho de Dentro, Rio de Janeiro - RJ<br>
+        CEP: 20770-120
+      </address>
 
-  <!-- Primeiro Card -->
-  <div class="card-douradop card mb-4">
-    <div class="container my-5">
-      <h1 class="mb-3">Como Chegar</h1>
-      <p class="mb-0">Confira o endereço e veja no mapa como chegar até a nossa paróquia.</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.571472306539!2d-43.32025758505314!3d-22.884060385013526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f1a4a6f52af%3A0xf2544e990d52a3a8!2sRua%20Teixeira%20Bastos%2C%2038%20-%20Engenho%20de%20Dentro%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2020770-120!5e0!3m2!1spt-BR!2sbr!4v1685027000000!5m2!1spt-BR!2sbr"
+        width="100%"
+        height="350"
+        style="border:0; border-radius: 12px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa do endereço Rua Teixeira Bastos, 38">
+      </iframe>
     </div>
   </div>
-
-  <!-- Segundo Card -->
-  <div class="card-dourado p-4 card">
-    <h4 class="mb-3">Endereço</h4>
-    <address class="fs-5 mb-4" style="line-height: 1.6;">
-      Rua Teixeira Bastos, 38<br>
-      Engenho de Dentro, Rio de Janeiro - RJ<br>
-      CEP: 20770-120
-    </address>
-
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.571472306539!2d-43.32025758505314!3d-22.884060385013526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f1a4a6f52af%3A0xf2544e990d52a3a8!2sRua%20Teixeira%20Bastos%2C%2038%20-%20Engenho%20de%20Dentro%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2020770-120!5e0!3m2!1spt-BR!2sbr!4v1685027000000!5m2!1spt-BR!2sbr"
-      width="100%"
-      height="350"
-      style="border:0; border-radius: 12px;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="Mapa do endereço Rua Teixeira Bastos, 38">
-    </iframe>
-  </div>
-
-</main>
-
-
+</section>
 {% endblock %}
