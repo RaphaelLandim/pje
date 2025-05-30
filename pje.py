@@ -36,9 +36,13 @@ def folheto():
     return render_template('folheto.html', current_page='folheto')
 
 #templates de banner
-@app.route('/doacao')
-def doacao():
-    return render_template('banner/doacao.html', current_page='doacao')
+@app.route('/banner1')
+def banner1():
+    return render_template('banner/banner1/banner1.html', current_page='banner1')
+
+@app.route('/banner4')
+def banner4():
+    return render_template('banner/banner4/banner4.html', current_page='banner4')
 
 @app.route('/contato', methods=['GET', 'POST'])
 def contato():
