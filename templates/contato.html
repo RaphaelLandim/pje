@@ -1,98 +1,132 @@
 {% extends "basepadrao.html" %}
-{% block title %}Como Chegar - Jesus Eucaristia{% endblock %}
+{% block title %}PJE - Contato{% endblock %}
 
 {% block extra_styles %}
 <style>
-  .custom-hero {
-    position: relative;
-    height: 350px;
-    overflow: hidden;
-    background-image: url('{{ url_for("static", filename="img/igreja.jpg") }}');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.65);
-  }
-
-  .custom-hero .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  .custom-hero h1 {
-    font-weight: 700;
-    font-size: 3rem;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
-    margin-bottom: 0.5rem;
-  }
-
-  .custom-hero p {
-    font-size: 1.25rem;
-    font-weight: 500;
-    text-shadow: 0 0 6px rgba(0,0,0,0.6);
-    margin-bottom: 1.5rem;
-  }
-
-  .chegar-section {
-    background: linear-gradient(180deg, #f9faf7 0%, #e6ebdf 100%);
-    padding: 3rem 0;
-  }
-
-  .card-endereco {
+  .contato-card {
+    border: none;
     border-radius: 1rem;
-    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+  }
+
+  .contato-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .contato-form {
+    background: #ffffff;
+    border-radius: 1rem;
     padding: 2rem;
-    box-shadow: 0 15px 30px rgba(62, 75, 49, 0.15);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.07);
   }
 
-  .card-endereco h4 {
-    color: #3e4b31;
-    font-weight: 700;
+  .form-label {
+    font-weight: 500;
   }
 
-  .card-endereco address {
-    font-size: 1.125rem;
-    color: #333;
+  textarea.form-control {
+    resize: none;
   }
+
+  .section-alt{
+  background:#f6f8f4;
+ /* border-top:2px dashed #cfcec9;
+ /* border-bottom:2px dashed #cfcec9;*/
+}
 </style>
 {% endblock %}
 
 {% block content %}
-<!-- Hero -->
+
+<!-- HERO padronizado -->
 <section class="hero position-relative">
-  <img src="{{ url_for('static', filename='img/comochegar_hero.jpg') }}" alt="Imagem dos horários das missas" class="w-100">
+  <img src="{{ url_for('static', filename='img/contato_hero.jpg') }}" alt="Imagem de contato" class="w-100" style="height: 350px; object-fit: cover;">
   <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white" style="background:rgba(0,0,0,.45);">
-    <h1 class="display-5 fw-bold mb-2">Como chegar</h1>
-    <p class="lead mb-4">Veja o endereço e localização da nossa paróquia</p>
+    <h1 class="display-5 fw-bold mb-2">Fale Conosco</h1>
+    <p class="lead mb-4">Estamos prontos para ouvir você com atenção e carinho</p>
   </div>
 </section>
 
-<!-- Conteúdo principal -->
-<section class="chegar-section">
+<!-- Cartões de Contato -->
+<section class="container py-5">
   <div class="container">
-    <div class="card-endereco">
-      <h4 class="mb-3">Endereço</h4>
-      <address>
-        Rua Teixeira Bastos, 38<br>
-        Engenho de Dentro, Rio de Janeiro - RJ<br>
-        CEP: 20770-120
-      </address>
+    <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
 
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.571472306539!2d-43.32025758505314!3d-22.884060385013526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f1a4a6f52af%3A0xf2544e990d52a3a8!2sRua%20Teixeira%20Bastos%2C%2038%20-%20Engenho%20de%20Dentro%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2020770-120!5e0!3m2!1spt-BR!2sbr!4v1685027000000!5m2!1spt-BR!2sbr"
-        width="100%"
-        height="350"
-        style="border:0; border-radius: 12px;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Mapa do endereço Rua Teixeira Bastos, 38">
-      </iframe>
+      <!-- Secretaria -->
+      <div class="col">
+        <div class="card contato-card h-100 text-center p-4 shadow-sm bg-light">
+          <h5 class="fw-semibold text-primary mb-2">Secretaria da Igreja</h5>
+          <p class="text-muted">Secretaria Online</p>
+          <p><i class="bi bi-telephone-fill me-2 text-primary"></i><a href="tel:+5521983275989" class="text-decoration-none text-dark">(21) 98631-69889</a></p>
+          <p><i class="bi bi-envelope-fill me-2 text-primary"></i><a href="mailto:secretaria@jesuseucaristia.org.br" class="text-decoration-none text-dark">pascomijerj@gmail.com</a></p>
+        </div>
+      </div>
+
+      <!-- Endereço -->
+      <div class="col">
+        <div class="card contato-card h-100 text-center p-4 shadow-sm bg-light">
+          <h5 class="fw-semibold text-primary mb-2">Endereço</h5>
+          <p class="text-dark">Rua Teixeira Bastos, 38<br>Engenho de Dentro, Rio de Janeiro - RJ<br>20770-120</p>
+          <p class="text-muted"><strong>Funcionamento:</strong><br>Seg a Sex: 8h às 18h<br>Sábado: 8h às 12h</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} mt-4" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Formulário -->
+<section class="section-alt py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="contato-form">
+          <h4 class="text-primary fw-semibold text-center mb-4">Envie sua Mensagem</h4>
+          <form method="POST" action="{{ url_for('contato') }}">
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control form-control-lg rounded-pill" id="nome" name="nome" placeholder="Seu nome" required>
+            </div>
+            <div class="mb-3">
+              <label for="telefone" class="form-label">Telefone</label>
+              <input type="tel" class="form-control form-control-lg rounded-pill" id="telefone" name="telefone" placeholder="(21) 91234-5678">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" class="form-control form-control-lg rounded-pill" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+            <div class="mb-4">
+              <label for="mensagem" class="form-label">Mensagem</label>
+              <textarea class="form-control form-control-lg rounded-4" id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary px-5 py-2 fw-semibold rounded-pill">Enviar Mensagem</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 {% endblock %}
