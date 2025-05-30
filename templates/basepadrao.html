@@ -3,7 +3,7 @@
 <head>
   <!-- Meta básicos -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
    <link rel="icon" href="/static/logo.png" type="image/png">
   <title>{% block title %}PJE{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}Site oficial da Paróquia Jesus Eucaristia – fé, celebração e comunidade.{% endblock %}">
@@ -31,7 +31,7 @@
   <section class="bg-light py-1 d-none d-md-block small text-muted top-bar">
     <div class="container d-flex justify-content-end gap-3">
       <span><i class="bi bi-telephone me-1"></i>(21) 98631-69889</span>
-      <span><i class="bi bi-envelope me-1"></i>pascomje@gmail.com</span>
+      <span><i class="bi bi-envelope me-1"></i>pascomijerj@gmail.com</span>
     </div>
   </section>
 
@@ -41,8 +41,11 @@
   <nav class="navbar navbar-expand-lg sticky-top shadow-sm custom-navbar">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" height="48" class="me-2">
-        <span class="fw-bold text-white">Paróquia <br class="d-none d-xl-block">Jesus Eucaristia</span>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" height="48" class="me-2" style="height: 85px; position: absolute">
+        <div class="text-white" style="margin-left: 90px;">
+          <div class="fw-bold">Paróquia Jesus Eucaristia</div>
+          <div style="font-size: 0.9rem; font-style: italic; opacity: 0.85;">"A Igreja mais perto de você"</div>
+        </div>
       </a>
 
       <!-- toggler com ícone branco -->
@@ -97,30 +100,27 @@
         </div>
 
         <div class="col-md-2">
-          <h6 class="fw-bold mb-3">Links</h6>
-          <ul class="list-unstyled small lh-lg">
-            <li><a href="/"             class="text-white text-decoration-none">Home</a></li>
-            <li><a href="/sobre"        class="text-white text-decoration-none">Sobre</a></li>
-            <li><a href="/missa"        class="text-white text-decoration-none">Missas</a></li>
-            <li><a href="/comochegar"   class="text-white text-decoration-none">Como Chegar</a></li>
-            <li><a href="/folheto"      class="text-white text-decoration-none">Folhetos</a></li>
-            <li><a href="/contato"      class="text-white text-decoration-none">Contato</a></li>
-          </ul>
+          <h6 class="fw-bold mb-3"><i class="bi bi-share-fill"></i> Sigam nossas<br>Redes Sociais</h6>
+        <div class="d-none d-lg-flex ms-3 gap-3 fs-5">
+          <a href="https://www.facebook.com/igrejajesuseucaristia/" target="_blank" style="color: #1877F2;">  <i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_jesuseucaristia/" target="_blank" style="color: #E4405F;">  <i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/@paroquiajesuseucaristia" target="_blank" style="color: #FF0000;">  <i class="bi bi-youtube"></i></a>
+        </div>
         </div>
 
         <div class="col-md-3">
-          <h6 class="fw-bold mb-3">Contato</h6>
-          <p class="small mb-1"><i class="bi bi-geo-alt me-2"></i>Rua Teixeira Bastos, 38 – Engenho de Dentro</p>
+           <h6 class="fw-bold mb-3"><i class="bi bi-person-lines-fill me-2"></i>Contato</h6>
+          <p class="small mb-1"><i class="bi bi-geo-alt me-2"></i>Rua Teixeira Bastos, 38<br>Engenho de Dentro</p>
           <p class="small mb-1"><i class="bi bi-telephone me-2"></i>(21) 98631-69889</p>
-          <p class="small"><i class="bi bi-envelope me-2"></i>pascomje@gmail.com</p>
+          <p class="small"><i class="bi bi-envelope me-2"></i>pascomijerj@gmail.com</p>
         </div>
 
 <div class="col-md-4 text-start">
-  <h6 class="fw-bold mb-3">Faça sua Oferta</h6>
+  <h6 class="fw-bold mb-3"><i class="bi bi-cash-stack me-2"></i>Faça sua Oferta</h6>
 
   <!-- Logo do banco -->
   <div class="mb-2">
-    <img src="/static/Avisos/logo_rodape.jpg"
+    <img src="/static/logo/logobra_home.jpg"
          alt="Logo Banco Bradesco"
          class="img-fluid"
          style="max-height: 40px;">
