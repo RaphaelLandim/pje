@@ -101,40 +101,61 @@
 
 <section class="py-5 folhetos-section">
   <div class="container">
-  
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="folheto-card card h-100 shadow-sm">
-        <div class="card-body">
-          <h5>Folheto Litúrgico – Domingo 01</h5>
-          <a href="{{ url_for('static', filename='folhetos/folheto-dom-01.pdf') }}" download class="btn btn-download mx-auto">
-            <i class="bi bi-file-earmark-arrow-down"></i> Baixar PDF
-          </a>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <div class="col">
+        <div class="folheto-card card h-100 shadow-sm">
+          <div class="card-body">
+            <h5>01 / 06 / 2025<br>Ano C - nº 35<br>Ascensão do Senhor</h5>
+            <a href="https://arqrio.com.br/app/painel/amissa.php?$=97c6663f1654da1fd3|24cddaR33eb|4|2dcf6e" 
+               target="_blank" class="btn btn-download mb-2 w-100">
+              <i class="bi bi-people"></i> Assembléia
+            </a>
+            <a href="https://arqrio.com.br/app/painel/amissa.php?$=97c6663f1654da1fd3|24cddaR33eb|4|2dcf7e" 
+               target="_blank" class="btn btn-download w-100">
+              <i class="bi bi-phone"></i> Celular
+            </a>
+          </div>
         </div>
       </div>
+
+      <div class="col">
+        <div class="folheto-card card h-100 shadow-sm">
+          <div class="card-body">
+            <h5>08 / 06 / 2025<br>Ano C - nº 36<br>Pentecostes, Solenidade </h5>
+            <a href="https://arqrio.com.br/app/painel/amissa.php?$=97c6663f1654da1fd3|24cddaR33eb|4|2dcf9e" 
+               target="_blank" class="btn btn-download mb-2 w-100">
+              <i class="bi bi-people"></i> Assembléia
+            </a>
+            <a href="https://arqrio.com.br/app/painel/amissa.php?$=97c6763f1654da1fd3|24cddaR33eb|4|2dcf0e" 
+               target="_blank" class="btn btn-download w-100">
+              <i class="bi bi-phone"></i> Celular
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="folheto-card card h-100 shadow-sm">
+          <div class="card-body">
+            <h5>15 / 06 / 2025<br>Ano C - nº 37<br>Santíssima Trindade </h5>
+            <a href="https://arqrio.com.br/app/painel/amissa.php?$=97c6763f1654da1fd3|24cddaR33eb|4|2dcf2e" 
+               target="_blank" class="btn btn-download mb-2 w-100">
+              <i class="bi bi-people"></i> Assembléia
+            </a>
+            <a href="https://arqrio.com.br/app/painel/amissa.php?$=97c6763f1654da1fd3|24cddaR33eb|4|2dcf3e" 
+               target="_blank" class="btn btn-download w-100">
+              <i class="bi bi-phone"></i> Celular
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="col">
-      <div class="folheto-card card h-100 shadow-sm">
-        <div class="card-body">
-          <h5>Folheto Litúrgico – Domingo 02</h5>
-          <a href="{{ url_for('static', filename='folhetos/folheto-dom-02.pdf') }}" download class="btn btn-download mx-auto">
-            <i class="bi bi-file-earmark-arrow-down"></i> Baixar PDF
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="folheto-card card h-100 shadow-sm">
-        <div class="card-body">
-          <h5>Boletim Paroquial – Maio</h5>
-          <a href="{{ url_for('static', filename='folhetos/boletim-maio.pdf') }}" download class="btn btn-download mx-auto">
-            <i class="bi bi-file-earmark-arrow-down"></i> Baixar PDF
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
+
+
 {% endblock %}
