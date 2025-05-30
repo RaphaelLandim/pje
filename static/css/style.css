@@ -25,6 +25,7 @@ body {
   color: #212529;
   background-color: #fff;
   overflow-x: hidden;
+  
 }
 
 /* Títulos */
@@ -45,10 +46,12 @@ p {
    NAVBAR
 ================================== */
 .custom-navbar {
-  background: linear-gradient(to right, #3e4b31, #566547);
+  background: linear-gradient(to right, #3e4b31, #435037);
   border-bottom: 3px solid #9dc08b;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 1030;
+    padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .navbar-brand span {
@@ -103,6 +106,8 @@ p {
 .hero {
   margin-top: 0 !important;
   padding-top: 0;
+  overflow: hidden;
+
 }
 
 .hero img {
