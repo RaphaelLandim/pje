@@ -1,0 +1,98 @@
+{% extends "basepadrao.html" %}
+
+{% block title %}PJE - Eventos{% endblock %}
+
+{% block extra_styles %}
+<style>
+  .eventos-section {
+    background: linear-gradient(180deg, #f9faf7 0%, #e6ebdf 100%);
+    padding: 3rem 0;
+  }
+
+  .evento-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 15px 30px rgba(62, 75, 49, 0.15);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    text-align: justify;
+  }
+
+  .evento-card:hover {
+    transform: translateY(-8px) rotateX(3deg);
+    box-shadow: 0 20px 35px rgba(62, 75, 49, 0.3);
+  }
+
+  .evento-card h5 {
+    color: #3e4b31;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .evento-date {
+    font-weight: 600;
+    color: #6b7a49;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .eventos-intro {
+    color: #3e4b31;
+    font-weight: 600;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero position-relative">
+  <img src="{{ url_for('static', filename='img/eventos_hero.jpg') }}" alt="Imagem dos horários das missas" class="w-100">
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white" style="background:rgba(0,0,0,.45);">
+    <h1 class="display-5 fw-bold mb-2">Eventos</h1>
+    <p class="lead mb-4"> Acompanhe aqui os eventos especiais da nossa paróquia. Missas temáticas, encontros, festas e muito mais!</p>
+  </div>
+</section>
+
+<section class="py-5 eventos-section">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="evento-card h-100 shadow-sm">
+          <h5>Missas Dominicais</h5>
+          <p class="evento-date">- - - - - - - - - - - - - - - -</p>
+                      <p class="mb-1"><strong>Sábado:</strong> 🕕 18h00</p>
+                         <p class="evento-date">- - - - - - - - - - - - - - - -</p>
+            <p class="mb-0"><strong>Domingo:</strong> 🕗 8h00 • 🕙 10h00 • 🕕 18h00</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="evento-card h-100 shadow-sm">
+          <h5>Quinta Eucarística</h5>
+          <p class="evento-date">Todas as Quintas-Feiras</p>
+          <p>Venha encontrar Jesus Eucarístico a partir das 8h com a Missa, seguida de adoração, 
+            terços da Misericórdia e Mariano, e encerrando com Missa e passeio com o Santíssimo as 18h.</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="evento-card h-100 shadow-sm">
+          <h5>Corpus Christi</h5>
+          <p class="evento-date">28 de junho de 2025</p>
+          <p>Procissão, tapetes e festa paroquial.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <i class="fas fa-calendar-alt fa-4x text-secondary mb-3"></i>
+      <h3 class="fw-semibold">Em breve novos eventos!</h3>
+      <p class="text-muted">Fique atento às nossas redes sociais e aos avisos paroquiais.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
