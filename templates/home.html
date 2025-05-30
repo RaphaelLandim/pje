@@ -194,8 +194,49 @@
   </div>
 </section>
 
-<!-- ========== MENSAGEM DO PADRE ========== -->
+
+
+
 <section class="container py-5">
+  <div class="container" style="max-width: 1140px;">
+    <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">
+      Últimas Notícias
+    </h2>
+    <div class="row g-4">
+      {% for noticia in [
+        ('noticia1.jpg', 'Festividade de Nossa Senhora de Fátima', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/festividade-de-nossa-senhora-de-fatima.html'),
+        ('noticia2.jpg', 'Criação da Capela de N. Sra. das Graças e Santa Dulce dos Pobres', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/criacao-da-capela-de-n-sra-das-gracas-e.html'),
+        ('noticia3.jpg', 'Sábado de Aleluia', 'https://paroquiajesuseucaristia.blogspot.com/2025/04/sabado-de-aleluia.html'),
+        ('noticia4.jpg', 'Sexta-feira Santa - Paixão de Cristo', 'https://paroquiajesuseucaristia.blogspot.com/2025/04/sexta-feira-santa-paixao-de-cristo.html')
+      ] %}
+      <div class="col-md-3 d-flex">
+        <div class="card h-100 border-0 shadow-sm p-2 mx-1 d-flex flex-column justify-content-start">
+          <img src="{{ url_for('static', filename='noticias/' + noticia[0]) }}" 
+               class="card-img-top mb-3 rounded noticia-img" 
+               alt="{{ noticia[1] }}">
+          <h6 class="fw-bold mb-0" style="font-size: 1rem; flex-grow: 1;">
+            <a href="{{ noticia[2] }}" style="color: #686345; text-decoration: none;">
+              {{ noticia[1] }}
+            </a>
+          </h6>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ========== MENSAGEM DO PADRE ========== -->
+<section class="section-alt py-5">
   <div class="container">
    <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">Mensagem do&nbsp;Padre</h2>
     <div class="card border-0 mx-auto shadow-sm text-center bg-light" style="max-width:680px;">
@@ -217,7 +258,7 @@
 
 
 <!-- ========== oração ========== -->
-<section class="section-alt py-5">
+<section class="container py-5">
   <div class="container">
     <h2 class="text-center mb-4 text-primary fw-bold" 
         style="text-decoration: underline; text-decoration-thickness: 4px;">
@@ -235,7 +276,7 @@
 
       <!-- Card com texto da explicação + oração -->
 <div class="col d-flex">
-  <div class="bg-white rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
+  <div class="bg-ligth rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
     <p class="lead mb-4">
       A oração <strong>Alma de Cristo</strong> em latim <em>(Anima Christi)</em> é uma prece tradicional da 
       Igreja Católica, atribuída a São Inácio de Loyola, fundador da Companhia de Jesus (Jesuítas). É uma súplica por proteção, purificação e união com Jesus, 
@@ -280,7 +321,7 @@
 
 
 <!-- ========== NEWSLETTER + CONTATO RÁPIDO + REDES SOCIAIS ========== -->
-<section class="container py-5">
+<section class="section-alt py-5">
   <div class="row g-4 align-items-stretch">
 
     <!-- Card: Newsletter -->
