@@ -105,7 +105,7 @@
 
 
 <!-- ========== QUEM SOMOS ========== -->
-<section class="section-alt py-5">
+<section class="container py-5">
   <div class="container">
     <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">Quem Somos</h2>
     <div class="row g-4 row-cols-1 row-cols-lg-2 align-items-stretch">
@@ -114,14 +114,14 @@
 
       <!-- Card com texto -->
       <div class="col d-flex">
-        <div class="bg-white rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
+        <div class="bg-light rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
           <p class="lead mb-4">
             A Paróquia Jesus Eucaristia é um espaço de <strong>fé, acolhimento e comunhão</strong>.
             Nossa missão é favorecer o encontro pessoal com Cristo e viver o Evangelho em comunidade.
           </p>
           <ul class="list-unstyled lh-lg mb-0">
             <li><i class="bi bi-check-circle text-success me-2"></i>Missas diárias e momentos de Adoração</li>
-            <li><i class="bi bi-check-circle text-success me-2"></i>Grupos de oração, formações e ações sociais</li>
+            <li><i class="bi bi-check-circle text-success me-2"></i>Confissões, formações e ações sociais</li>
             <li><i class="bi bi-check-circle text-success me-2"></i>Ambiente seguro e acolhedor para todos</li>
           </ul>
         </div>
@@ -129,15 +129,26 @@
 
       <!-- Card com imagem -->
       <div class="col d-flex">
-        <div class="bg-white rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center">
-          <img src="{{ url_for('static', filename='Banner/igreja.jpg') }}" alt="Imagem de uma celebração na paróquia"
+        <div class="bg-light rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center">
+          <img src="{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}" alt="Imagem de uma celebração na paróquia"
                class="img-fluid rounded-4">
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-
-
-
+<!-- ========== HORÁRIOS DAS CONFISSÕES ========== -->
+<section class="section-alt py-5">
+  <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">Horários das Confissões</h2>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-6">
+      <div class="card h-100 border-0 shadow-sm p-4 text-center">
+        <h5 class="fw-bold mb-3">Confissões Semanais</h5>
+        <p class="mb-1">De Segunda a Sexta-Feira</p>
+        <p class="mb-1">de 15h00 - 17h00</p>
+        <p class="mb-0">Outros horários mediante agendamento.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -169,7 +180,7 @@
   <div class="row g-4">
     {% for minist in [
       ('bi-music-note-beamed','Ministério de Música','Anima nossas celebrações com louvor e arte.'),
-      ('bi-heart','Pastoral da Criança','Acompanha famílias e promove saúde e fé.'),
+      ('bi-heart','Pastoral da Família','Acompanha famílias e promove saúde e fé.'),
       ('bi-people','Grupo de Oração','Louvor, intercessão e partilha da Palavra.')
     ] %}
     <div class="col-md-4">
@@ -189,7 +200,7 @@
    <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">Mensagem do&nbsp;Padre</h2>
     <div class="card border-0 mx-auto shadow-sm text-center bg-light" style="max-width:680px;">
       <div class="card-body p-5">
-        <img src="{{ url_for('static', filename='Banner/padre.jpg') }}" alt="Padre Charles Fernando" class="rounded-circle shadow mb-3"
+        <img src="{{ url_for('static', filename='img/home/padre_home.jpg') }}" alt="Padre Charles Fernando" class="rounded-circle shadow mb-3"
              style="width:120px;">
         <blockquote class="blockquote mb-3">
           <p class="fs-5 fst-italic">
@@ -217,39 +228,51 @@
       <!-- Card com imagem de São Inácio de Loyola -->
       <div class="col d-flex">
         <div class="bg-white rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center">
-          <img src="{{ url_for('static', filename='img/loyola.jpg') }}" alt="São Inácio de Loyola"
+          <img src="{{ url_for('static', filename='img/home/loyola_home.jpg') }}" alt="São Inácio de Loyola"
                class="img-fluid rounded-4" style="max-height: 350px; object-fit: contain;">
         </div>
       </div>
 
       <!-- Card com texto da explicação + oração -->
-      <div class="col d-flex">
-        <div class="bg-white rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
-          <p class="lead mb-4">
-              A oração <Strong>Alma de Cristo </Strong>em latim<em>(Anima Christi)</em> é uma prece tradicional da 
-              Igreja Católica, atribuída a São Inácio de Loyola, fundador da Companhia de Jesus (Jesuítas). É uma súplica por proteção, purificação e união com Jesus, 
-              muito usada antes ou depois da Comunhão como expressão de entrega e intimidade com Cristo.
-          </p>
+<div class="col d-flex">
+  <div class="bg-white rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
+    <p class="lead mb-4">
+      A oração <strong>Alma de Cristo</strong> em latim <em>(Anima Christi)</em> é uma prece tradicional da 
+      Igreja Católica, atribuída a São Inácio de Loyola, fundador da Companhia de Jesus (Jesuítas). É uma súplica por proteção, purificação e união com Jesus, 
+      muito usada antes ou depois da Comunhão como expressão de entrega e intimidade com Cristo.
+    </p>
 
-          <h5 class="fw-bold mb-3">Oração completa — Alma de Cristo (Anima Christi)</h5>
+    <h5 class="fw-bold mb-3">Oração completa — Alma de Cristo (Anima Christi)</h5>
 
-          <blockquote class="blockquote fs-6 fst-italic">
-            Alma de Cristo, santificai-me.<br>
-            Corpo de Cristo, salvai-me.<br>
-            Sangue de Cristo, inebriai-me.<br>
-            Água do lado de Cristo, lavai-me.<br>
-            Paixão de Cristo, fortalecei-me.<br>
-            Ó bom Jesus, ouvi-me.<br>
-            Dentro dos vossos sofrimentos, esconda-me.<br>
-            Não permitais que eu me separe de vós.<br>
-            Do mal inimigo, defendei-me.<br>
-            Na hora da minha morte, chamai-me.<br>
-            E mandai-me ir para vós,<br>
-            Para que com os vossos santos vos louve<br>
-            Por todos os séculos dos séculos. Amém.
-          </blockquote>
-        </div>
-      </div>
+    <!-- Imagem + oração lado a lado em telas médias ou maiores -->
+    <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+      <!-- Oração -->
+      <blockquote class="blockquote fs-6 fst-italic mb-0">
+        Alma de Cristo, santificai-me.<br>
+        Corpo de Cristo, salvai-me.<br>
+        Sangue de Cristo, inebriai-me.<br>
+        Água do lado de Cristo, lavai-me.<br>
+        Paixão de Cristo, fortalecei-me.<br>
+        Ó bom Jesus, ouvi-me.<br>
+        Dentro dos vossos sofrimentos, esconda-me.<br>
+        Não permitais que eu me separe de vós.<br>
+        Do mal inimigo, defendei-me.<br>
+        Na hora da minha morte, chamai-me.<br>
+        E mandai-me ir para vós,<br>
+        Para que com os vossos santos vos louve<br>
+        Por todos os séculos dos séculos. Amém.
+      </blockquote>
+
+            <!-- Imagem -->
+      <img src="{{ url_for('static', filename='img/home/almacristo_home.jpg') }}" 
+           alt="Imagem de Santo Inácio" 
+           class="img-fluid rounded" 
+           style="max-width: 160px; height: auto;">
+
+    </div>
+  </div>
+</div>
+
 
     </div>
   </div>
@@ -325,7 +348,7 @@
 
 
   <h3 class="fw-bold ">Faça a sua Oferta</h3>
-  <img src="/static/Avisos/logo_bra.png"
+  <img src="/static/logo/logobra_pop.png"
        alt="Logo Banco Bradesco" class="bank-logo" />
   <p class="mb-1 lh-sm">
     <strong>Agência:</strong> 0814<br>
