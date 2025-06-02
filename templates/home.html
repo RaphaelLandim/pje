@@ -40,6 +40,24 @@
  /* border-top:2px dashed #cfcec9;
  /* border-bottom:2px dashed #cfcec9;*/
 }
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(270deg, #000000, #c4a300, #000000);
+  background-size: 600% 600%;
+  animation: gradientFlow 10s ease infinite;
+}
 </style>
 {% endblock %}
 
@@ -54,41 +72,73 @@
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
     </div>
 
     <div class="carousel-inner">
-      <a href="{{ url_for('banner1') }}" class="carousel-item active text-white text-decoration-none">
+
+      <!-- Slide 1 -->
+      <a href="{{ url_for('banner1') }}" class="carousel-item active text-decoration-none" style="color: #fff;">
         <img src="{{ url_for('static', filename='bannerhome/banner1.jpg') }}" class="d-block w-100" alt="Banner 1">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Clique aqui e saiba como ajudar</h5>
-          <p>Sua contribuição é fundamental para a construção e manutenção da nossa Paróquia Jesus Eucaristia.<br>Junte-se a nós nessa missão!</p>
+        <div class="carousel-caption d-block text-center" style="text-shadow: 1px 1px 4px #000;">
+          <h5 style="color: #f0e68c; font-weight: 700;">Clique aqui e saiba como ajudar</h5>
+          <p style="color: #fff;">
+            Sua contribuição é fundamental para a construção e manutenção da nossa Paróquia Jesus Eucaristia.<br>
+            Junte-se a nós nessa missão!
+          </p>
         </div>
       </a>
 
-      <a href="https://www.instagram.com/p/DKF_I7GS3Um/?img_index=2" class="carousel-item text-white text-decoration-none">
+      <!-- Slide 2 -->
+      <a href="https://www.instagram.com/p/DKF_I7GS3Um/?img_index=2" class="carousel-item text-decoration-none" style="color: #fff;">
         <img src="{{ url_for('static', filename='bannerhome/banner2.jpg') }}" class="d-block w-100" alt="Banner 2">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Missa de 1º Comunhão</h5>
-          <p>Acesse o nosso instagram e veja as fots da missa de 1º Comunhão<br>A primeira de muitas em nossa Paróquia.</p>
+        <div class="carousel-caption d-block text-center" style="text-shadow: 1px 1px 4px #000;">
+          <h5 style="color: #f0e68c; font-weight: 700;">Missa de 1º Comunhão</h5>
+          <p style="color: #fff;">
+            Acesse o nosso instagram e veja as fotos da missa de 1º Comunhão<br>
+            A primeira de muitas em nossa Paróquia.
+          </p>
         </div>
       </a>
 
-      <a href="https://paroquiajesuseucaristia.blogspot.com/2025/05/criacao-da-capela-de-n-sra-das-gracas-e.html" class="carousel-item text-white text-decoration-none">
+      <!-- Slide 3 -->
+      <a href="https://paroquiajesuseucaristia.blogspot.com/2025/05/criacao-da-capela-de-n-sra-das-gracas-e.html" class="carousel-item text-decoration-none" style="color: #fff;">
         <img src="{{ url_for('static', filename='bannerhome/banner3.jpg') }}" class="d-block w-100" alt="Banner 3">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Você sabia ?</h5>
-          <p>A Nossa Paróquia ganhou uma Capela<br>Clique Aqui!! Para ver as fotos e obter mais informações</be></p>
+        <div class="carousel-caption d-block text-center" style="text-shadow: 1px 1px 4px #000;">
+          <h5 style="color: #f0e68c; font-weight: 700;">Você sabia ?</h5>
+          <p style="color: #fff;">
+            A Nossa Paróquia ganhou uma Capela<br>
+            Clique Aqui!! Para ver as fotos e obter mais informações
+          </p>
         </div>
       </a>
 
-
-        <a href="{{ url_for('banner4') }}" class="carousel-item text-white text-decoration-none">
+      <!-- Slide 4 -->
+      <a href="{{ url_for('banner4') }}" class="carousel-item text-decoration-none" style="color: #fff;">
         <img src="{{ url_for('static', filename='bannerhome/banner4.jpg') }}" class="d-block w-100" alt="Banner 4">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Habemus Papam</h5>
-          <p>Papa Leão XIV: um novo pastor para a Igreja e para o mundo.</p>
+        <div class="carousel-caption d-block text-center" style="text-shadow: 1px 1px 4px #000;">
+          <h5 style="color: #f0e68c; font-weight: 700;">Habemus Papam</h5>
+          <p style="color: #fff;">Papa Leão XIV: um novo pastor para a Igreja e para o mundo.</p>
         </div>
       </a>
+
+      <!-- Slide 5: logo e mensagem -->
+      <a href="https://www.instagram.com/p/DKXisnGKk16/" target="_blank" class="carousel-item animated-gradient text-decoration-none" style="height: 400px;">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100 text-white text-center p-3">
+          <img src="{{ url_for('static', filename='logo.png') }}"
+               class="mb-3"
+               style="max-height: 150px; max-width: 250px; width: auto; height: auto;"
+               alt="Logo">
+          <h2 class="mb-2" style="color: #f0e68c; font-weight: 700; text-shadow: 1px 1px 4px #000;">
+            Programação de Junho
+          </h2>
+          <p class="lead" style="color: #ffffff; text-shadow: 1px 1px 3px #000;">
+            Confira a nossa programação especial deste mês.<br>
+            <span style="color: #ffd700; font-weight: 600;">Clique aqui e saiba mais!</span>
+          </p>
+        </div>
+      </a>
+
     </div>
 
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -101,6 +151,9 @@
     </button>
   </div>
 </section>
+
+
+
 
 
 
@@ -350,7 +403,11 @@
           <i class="bi bi-chat-dots me-2 text-primary"></i>Contato Rápido
         </h4>
         <p class="text-muted mb-3">Dúvidas? Fale com a secretaria paroquial agora mesmo:</p>
-        <a href="tel:+55219863169889" class="btn btn-outline-success btn-lg w-100">
+            <a href="https://wa.me/+55219863169889?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações." 
+       target="_blank" 
+       class="btn btn-outline-success btn-lg w-100">
+      <i class="bi bi-whatsapp me-2"></i> (21) 98631-69889
+    </a>
           <i class="bi bi-whatsapp me-2"></i> (21) 98631-69889
         </a>
       </div>
