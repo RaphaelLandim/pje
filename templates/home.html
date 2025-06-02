@@ -153,43 +153,44 @@
 </section>
 
 
-
-
-
-
-<!-- ========== QUEM SOMOS ========== -->
+<!-- ========== ULTIMAS NOTICIAS ========== -->
 <section class="container py-5">
-  <div class="container">
-    <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">Quem Somos</h2>
-    <div class="row g-4 row-cols-1 row-cols-lg-2 align-items-stretch">
-      
-
-
-      <!-- Card com texto -->
-      <div class="col d-flex">
-        <div class="bg-light rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
-          <p class="lead mb-4">
-            A Paróquia Jesus Eucaristia é um espaço de <strong>fé, acolhimento e comunhão</strong>.
-            Nossa missão é favorecer o encontro pessoal com Cristo e viver o Evangelho em comunidade.
-          </p>
-          <ul class="list-unstyled lh-lg mb-0">
-            <li><i class="bi bi-check-circle text-success me-2"></i>Missas diárias e momentos de Adoração</li>
-            <li><i class="bi bi-check-circle text-success me-2"></i>Confissões, formações e ações sociais</li>
-            <li><i class="bi bi-check-circle text-success me-2"></i>Ambiente seguro e acolhedor para todos</li>
-          </ul>
+  <div class="container" style="max-width: 1500px;">
+    <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">
+      Últimas Notícias
+    </h2>
+    <div class="row flex-row flex-nowrap g-4 overflow-auto">
+      {% for noticia in [
+        ('noticia0.jpg', 'Confira a nossa Programação de Junho', 'https://www.instagram.com/p/DKXisnGKk16'),
+        ('noticia1.jpg', 'Festividade de Nossa Senhora de Fátima', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/festividade-de-nossa-senhora-de-fatima.html'),
+        ('noticia2.jpg', 'Criação da Capela de N. Sra. das Graças e Santa Dulce dos Pobres', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/criacao-da-capela-de-n-sra-das-gracas-e.html'),
+        ('noticia3.jpg', 'Sábado de Aleluia', 'https://paroquiajesuseucaristia.blogspot.com/2025/04/sabado-de-aleluia.html'),
+        ('noticia4.jpg', 'Sexta-feira Santa - Paixão de Cristo', 'https://paroquiajesuseucaristia.blogspot.com/2025/04/sexta-feira-santa-paixao-de-cristo.html')
+        
+      ] %}
+      <div class="col d-flex" style="min-width: 220px;">
+        <div class="card h-100 border-0 shadow-sm p-2 mx-1 d-flex flex-column">
+          <img src="{{ url_for('static', filename='noticias/' + noticia[0]) }}" 
+               class="card-img-top mb-3 rounded noticia-img" 
+               alt="{{ noticia[1] }}">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <a href="{{ noticia[2] }}" target="_blank" rel="noopener noreferrer"
+               style="color: #686345; text-decoration: none; font-weight: 700; font-size: 1rem;">
+              {{ noticia[1] }}
+            </a>
+          </div>
         </div>
       </div>
-
-      <!-- Card com imagem -->
-      <div class="col d-flex">
-        <div class="bg-light rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center">
-          <img src="{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}" alt="Imagem de uma celebração na paróquia"
-               class="img-fluid rounded-4">
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
+
+
+
+
+
+
 
 <!-- ========== HORÁRIOS DAS CONFISSÕES ========== -->
 <section class="section-alt py-5">
@@ -249,38 +250,39 @@
 
 
 
-
+<!-- ========== QUEM SOMOS ========== -->
 <section class="container py-5">
-  <div class="container" style="max-width: 1140px;">
-    <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">
-      Últimas Notícias
-    </h2>
-    <div class="row g-4">
-      {% for noticia in [
-        ('noticia1.jpg', 'Festividade de Nossa Senhora de Fátima', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/festividade-de-nossa-senhora-de-fatima.html'),
-        ('noticia2.jpg', 'Criação da Capela de N. Sra. das Graças e Santa Dulce dos Pobres', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/criacao-da-capela-de-n-sra-das-gracas-e.html'),
-        ('noticia3.jpg', 'Sábado de Aleluia', 'https://paroquiajesuseucaristia.blogspot.com/2025/04/sabado-de-aleluia.html'),
-        ('noticia4.jpg', 'Sexta-feira Santa - Paixão de Cristo', 'https://paroquiajesuseucaristia.blogspot.com/2025/04/sexta-feira-santa-paixao-de-cristo.html')
-      ] %}
-      <div class="col-md-3 d-flex">
-        <div class="card h-100 border-0 shadow-sm p-2 mx-1 d-flex flex-column">
-          <img src="{{ url_for('static', filename='noticias/' + noticia[0]) }}" 
-               class="card-img-top mb-3 rounded noticia-img" 
-               alt="{{ noticia[1] }}">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <a href="{{ noticia[2] }}" target="_blank" rel="noopener noreferrer"
-               style="color: #686345; text-decoration: none; font-weight: 700; font-size: 1rem;">
-              {{ noticia[1] }}
-            </a>
+  <div class="container">
+    <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">Quem Somos</h2>
+    <div class="row g-4 row-cols-1 row-cols-lg-2 align-items-stretch">
+      
 
-          </div>
+
+      <!-- Card com texto -->
+      <div class="col d-flex">
+        <div class="bg-light rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
+          <p class="lead mb-4">
+            A Paróquia Jesus Eucaristia é um espaço de <strong>fé, acolhimento e comunhão</strong>.
+            Nossa missão é favorecer o encontro pessoal com Cristo e viver o Evangelho em comunidade.
+          </p>
+          <ul class="list-unstyled lh-lg mb-0">
+            <li><i class="bi bi-check-circle text-success me-2"></i>Missas diárias e momentos de Adoração</li>
+            <li><i class="bi bi-check-circle text-success me-2"></i>Confissões, formações e ações sociais</li>
+            <li><i class="bi bi-check-circle text-success me-2"></i>Ambiente seguro e acolhedor para todos</li>
+          </ul>
         </div>
       </div>
-      {% endfor %}
+
+      <!-- Card com imagem -->
+      <div class="col d-flex">
+        <div class="bg-light rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center">
+          <img src="{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}" alt="Imagem de uma celebração na paróquia"
+               class="img-fluid rounded-4">
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
 
 
 
