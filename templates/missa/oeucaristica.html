@@ -1,0 +1,414 @@
+{% extends "basepadrao.html" %}
+{% block title %}PJE - Orações Eucarísticas{% endblock %}
+
+{% block extra_styles %}
+<style>
+  /* Mesma paleta do seu template, com acordeão transparente e botões estilosos */
+  .accordion-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #c5cdb9;
+  }
+
+  .accordion-button {
+    background-color: #dee2d8;
+    color: #5a6153;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: #e6ebdf;
+    color: #3e4b31;
+  }
+
+  .accordion-body {
+    white-space: pre-line;
+    margin: 0;
+    padding: 1rem 1rem;
+    text-align: justify;
+    border-bottom: none;
+  }
+
+  section.bg-light.border-bottom {
+    border-bottom: 3px solid #aaa;
+    margin-bottom: 2rem;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="bg-light py-3 border-bottom">
+  <div class="container">
+    <h1 class="fw-bold text-success mb-3">Orações Eucarísticas</h1>
+    <p class="text-muted">Texto completo das 5 Orações Eucarísticas do Novo Missal Romano.</p>
+  </div>
+</section>
+
+<div class="container" id="oracoesEucaristicas">
+  <div class="accordion" id="accordionOracoes">
+
+    <!-- Oração Eucarística I -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOI">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOI" aria-expanded="true" aria-controls="collapseOI" aria-label="Abrir/fechar Oração Eucarística I">
+          Oração Eucarística I (Tradicional)
+        </button>
+      </h2>
+      <div id="collapseOI" class="accordion-collapse collapse" aria-labelledby="headingOI" data-bs-parent="#accordionOracoes">
+        <div class="accordion-body">
+<p><strong>ORAÇÃO EUCARÍSTICA I</strong><br>
+<strong>(CANÔN ROMANO)</strong></p>
+
+<p>Esta oração não possui prefácio.<br>
+O Presidente traça a cruz sobre as ofertas do pão e do vinho.</p>
+
+<p><strong>PE:</strong> Pai de misericórdia, a quem sobem nossos louvores, nós vos pedimos por Jesus Cristo, vosso Filho e Senhor nosso, que abençoeis + estas oferendas apresentadas ao vosso altar.</p>
+
+<p><strong>T:</strong> Abençoai nossa oferenda, ó Senhor!<br>
+<strong>PE:</strong> Nós as oferecemos pela vossa Igreja santa e católica: concedei-lhe paz e proteção, unindo-a num só corpo e governando-a por toda a terra. Nós as oferecemos também pelo vosso servo o papa N. por nosso bispo N. e por todos os que guardam a fé que receberam dos apóstolos.</p>
+
+<p><strong>T:</strong> Conservai a vossa Igreja sempre unida!<br>
+<strong>PE ou Cc:</strong> Lembrai-vos, ó Pai, dos vossos filhos e filhas N.N. e de todos os que circundam este altar, dos quais conheceis a fidelidade e a dedicação em vos servir. Eles vos oferecem conosco este sacrifício de louvor por si e por todos os seus e elevam a vós as suas preces para alcançar o perdão de suas faltas, a segurança em suas vidas e a salvação que esperam.</p>
+
+<p><strong>T:</strong> Lembrai-vos, ó Pai, de vossos filhos!<br>
+Observe os Comunicantes próprios a cada solenidade, caso não haja continua normalmente.</p>
+
+<p><strong>PE ou Cc:</strong> Em comunhão com toda a Igreja, veneramos a sempre virgem Maria, mãe de nosso Deus e Senhor Jesus Cristo; e também são José, esposo de Maria, * os santos apóstolos e mártires: Pedro e Paulo, André, (Tiago e João, Tomé, Tiago e Filipe, Bartolomeu e Mateus, Simão e Tadeu, Lino, Cleto, Clemente, Sisto, Cornélio e Cipriano, Lourenço e Crisógono, João e Paulo, Cosme e Damião), e todos os vossos santos. Por seus méritos e preces, concedei-nos sem cessar a vossa proteção.</p>
+
+<p><strong>T:</strong> Em comunhão com toda a Igreja aqui estamos!_______________</p>
+
+<p><strong>Comunicantes próprios</strong></p>
+
+<p><strong>No Natal e Oitava</strong><br>
+<strong>PE ou Cc:</strong> Em comunhão com toda a Igreja, celebramos o dia santo (a noite santa) em que a Virgem Maria deu ao mundo o Salvador. Veneramos também a mesma Virgem Maria e seu esposo São José.<br>*</p>
+
+<p><strong>Na Epifania do Senhor</strong><br>
+<strong>PE ou Cc:</strong> Em comunhão com toda a Igreja, celebramos o dia santo em que vosso Filho único, convosco eterno em vossa glória, manifestou-se visivelmente em nossa carne. Veneramos também a Virgem Maria e seu esposo São José. *</p>
+
+<p><strong>Da Vigília Pascal até o 2º. Domingo da Páscoa</strong><br>
+<strong>PE ou Cc:</strong> Em comunhão com toda a Igreja, celebramos o dia santo (a noite santa) da ressurreição de Nosso Senhor Jesus Cristo. Veneramos também a Virgem Maria e seu esposo São José. *</p>
+
+<p><strong>Na ascensão do Senhor</strong><br>
+<strong>PE ou Cc:</strong> Em comunhão com toda a Igreja, celebramos o dia santo em que o vosso Filho único elevou à glória da vossa direita a fragilidade de nossa carne. Veneramos também a virgem Maria e seu esposo, São José.*</p>
+
+<p><strong>Em Pentecostes</strong><br>
+<strong>PE ou Cc:</strong> Em Comunhão com toda a Igreja, celebramos o dia santo de Pentecostes em que o Espírito Santo, em línguas de fogo, manifestou-se aos apóstolos. Veneramos também a virgem Maria e seu esposo, São José. *</p>
+
+<p><strong>T:</strong> Em comunhão com toda a Igreja aqui estamos!_______________</p>
+
+<p><strong>PE:</strong> Recebei, ó Pai, com bondade, a oferenda dos vossos servos e de toda a vossa família; dai-nos sempre a vossa paz, livrai-nos da condenação e acolhei-nos entre os vossos eleitos.<br>_______________</p>
+
+<p><strong>Da Vigília Pascal ao 2º. Domingo da Páscoa</strong><br>
+<strong>PE:</strong> Recebei, ó Pai, com bondade, a oferenda dos vossos servos e de toda a vossa família. Nós a oferecemos também por aqueles que fizestes renascer pela água e pelo Espírito Santo, dando-lhes o perdão de todos os pecados. Dai-nos sempre a vossa paz, livrai-nos da condenação eterna e acolhei-nos entre os vossos eleitos.<br>_______________</p>
+
+<p>O Presidente estende as mãos em direção as ofertas.</p>
+
+<p><strong>PE:</strong> Dignai-vos, ó Pai, aceitar e santificar estas oferendas, a fim de que se tornem para nós o Corpo e o Sangue de Jesus Cristo, vosso filho e Senhor nosso.</p>
+
+<p><strong>T:</strong> Santificai nossa oferenda, ó Senhor!<br>
+<strong>PE:</strong> Na noite em que ia ser entregue, ele tomou o pão em suas mãos, elevou os olhos a vós, ó Pai, deu graças e o partiu e deu a seus discípulos.</p>
+
+<p>Após elevar a hóstia à vista de todos, abaixa-a e faz a genuflexão.</p>
+
+<p>Do mesmo modo, ao fim da ceia, ele tomou o cálice em suas mãos, deu graças novamente e o deu a seus discípulos.</p>
+
+<p>Após elevar o cálice à vista de todos, abaixa-o e faz a genuflexão.</p>
+
+<p><strong>Eis o mistério da fé!</strong></p>
+
+<p><strong>T:</strong> Todas as vezes que comemos deste pão e bebemos deste cálice, anunciamos, Senhor, a vossa morte, enquanto esperamos a vossa vinda!</p>
+
+<p><strong>PE:</strong> Celebrando, pois, a memória da paixão do vosso Filho, da sua ressurreição dentre os mortos e gloriosa ascensão aos céus, nós, vossos servos, e também vosso povo santo, vos oferecemos, ó Pai, dentre os bens que nos destes, o sacrifício perfeito e santo, pão da vida eterna e cálice da salvação.</p>
+
+<p><strong>T:</strong> Recebei, ó Senhor, a nossa oferta!</p>
+
+<p><strong>PE:</strong> Recebei, ó Pai, esta oferenda, como recebestes a oferta de Abel, o sacrifício de Abraão e os dons de Melquisedeque.<br>
+O Presidente inclina-se.<br>
+Nós vos suplicamos que ela seja levada à vossa presença, para que, ao participarmos deste altar, recebendo o Corpo e o Sangue de vosso Filho,<br>
+O Presidente ergue-se e traça sobre si o sinal da cruz.<br>
+sejamos repletos de todas as graças + e bênçãos do céu.</p>
+
+<p><strong>T:</strong> Recebei, ó Senhor, a nossa oferta!</p>
+
+<p><strong>PE ou Cc:</strong> Lembrai-vos, ó Pai, dos vossos filhos e filhas N.N.,<br>
+O Presidente une as mãos e fica em silêncio por alguns instantes.<br>
+que partiram desta vida, marcados com o sinal da fé. A eles e a todos os que adormeceram no Cristo concedei a felicidade, a luz e a paz.</p>
+
+<p><strong>T:</strong> Lembrai-vos, ó Pai, dos vossos filhos!</p>
+
+<p><strong>PE:</strong> E a todos nós, pecadores,<br>
+O Presidente bate ao peito.<br>
+que confiamos na vossa imensa misericórdia, concedei, não por nossos méritos, mas por vossa bondade, o convívio dos apóstolos e mártires: João Batista e Estevão, Matias e Barnabé, (Inácio, Alexandre, Marcelino e Pedro, Felicidade e Perpétua, Águeda e Luzia, Inês, Cecília, Anastácia) e todos os vossos santos. Por Cristo, Senhor nosso.</p>
+
+<p><strong>T:</strong> Concedei-nos o convívio dos eleitos!</p>
+
+<p><strong>PE:</strong> Por ele não cessais de criar e santificar estes bens e distribuí-los entre nós.<br>
+Por Cristo, com Cristo, em Cristo, a vós, Deus Pai todo poderoso, na unidade do Espírito Santo, toda a honra e toda a glória, agora e para sempre.</p>
+
+<p><strong>T:</strong> Amém!</p>
+
+      </div>
+    </div>
+
+    <!-- Oração Eucarística II -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOII">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOII" aria-expanded="false" aria-controls="collapseOII" aria-label="Abrir/fechar Oração Eucarística II">
+          Oração Eucarística II
+        </button>
+      </h2>
+      <div id="collapseOII" class="accordion-collapse collapse" aria-labelledby="headingOII" data-bs-parent="#accordionOracoes">
+        <div class="accordion-body">
+          ORAÇÃO EUCARÍSTICA II
+
+PE: O Senhor esteja convosco.
+T: Ele está no meio de nós.
+PE: Corações ao alto.
+T: O nosso coração está em Deus.
+PE: Demos graças ao Senhor, nosso Deus.
+T: É nosso dever e nossa salvação.
+O celebrante de braços abertos reza:
+
+PE: Na verdade, é justo e necessário, é nosso dever e salvação dar-vos graças, sempre e em todo o lugar, Senhor, Pai santo, Deus eterno e todo-poderoso, por Cristo, Senhor nosso. Ele é a vossa palavra viva, pela qual tudo criastes. Ele é o nosso salvador e redentor, verdadeiro homem, concebido do Espírito Santo e nascido da Virgem Maria. Ele, para cumprir a vossa vontade e reunir um povo santo em vosso louvor, estendeu os braços na hora da sua paixão a fim de vencer a morte e manifestar a ressurreição. Por ele os anjos celebram vossa grandeza e os santos proclamam vossa glória. Concedei-nos também a nós associar-nos a seus louvores, cantando (dizendo) a uma só voz:
+
+T: Santo, Santo, Santo, Senhor Deus do universo! O céu e a terra proclamam a vossa glória. Hosana nas alturas! Bendito o que vem em nome do Senhor! Hosana nas alturas!
+
+O Presidente estende as mãos e traça a cruz sobre as ofertas.
+
+PE: Na verdade, ó Pai, vós sois santo e fonte de toda santidade. Santificai, pois, estas oferendas, derramando sobre elas o vosso Espírito, a fim de que se tornem para nós o Corpo e + o Sangue de Jesus Cristo, vosso Filho e Senhor nosso.
+
+T: Santificai nossa oferenda, ó Senhor!
+PE: Estando para ser entregue e abraçando livremente a paixão, ele tomou o pão, deu graças e o partiu e deu a seus discípulos.
+
+Após elevar a hóstia a vista de todos, abaixa-a e faz a genuflexão.
+
+Do mesmo modo, ao fim da ceia, ele tomou o cálice em suas mãos, deu graças novamente o deu a seus discípulos.
+
+Após elevar o cálice a vista de todos, abaixa-o e faz a genuflexão.
+
+Eis o mistério da fé!
+
+T: Todas as vezes que comemos deste pão e bebemos deste cálice, anunciamos, Senhor, a vossa morte, enquanto esperamos a vossa vinda!
+PE: Celebrando, pois, a memória da morte e ressurreição do vosso Filho, nós vos oferecemos, ó Pai, o pão da vida e o cálice da salvação; e vos agradecemos por que nos tornastes dignos de estar aqui na vossa presença e vos servir.
+
+T: Recebei, ó Senhor, a nossa oferta!
+PE: E nós vos suplicamos que, participando do Corpo e Sangue de Cristo, sejamos reunidos pelo Espírito Santo num só corpo.
+
+T: Fazei de nós um só corpo e um só espírito!
+PE ou Cc: Lembrai-vos, ó Pai, da vossa Igreja que se faz presente pelo mundo inteiro: que ela cresça na caridade com o papa N., com o nosso bispo N. e todos os ministros do vosso povo.
+
+T: Lembrai-vos, ó Pai, da vossa Igreja!
+PE ou Cc: Lembrai-vos também dos (outros) nossos irmãos e irmãs que morreram na esperança da ressurreição e de todos os que partiram desta vida: acolhei-os junto a vós na luz da vossa face.
+
+T: Lembrai-vos, ó Pai, dos vossos filhos!
+PE ou Cc: Enfim, nós vos pedimos, tende piedade de todos nós e dai-nos participar da vida eterna, com a virgem Maria, mãe de Deus e São José seu castíssimo esposo, com os santos apóstolos e todos os que neste mundo vos serviram, a fim de vos louvarmos e glorificarmos por Jesus Cristo, vosso Filho.
+
+O celebrante une as mãos. 
+T: Concedei-nos o convívio dos eleitos!
+PE: Por Cristo, com Cristo, em Cristo, a vós, Deus Pai todo poderoso, na unidade do Espírito Santo, toda a honra e toda a glória, agora e para sempre.
+
+T: Amém!
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Oração Eucarística III -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOIII">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOIII" aria-expanded="false" aria-controls="collapseOIII" aria-label="Abrir/fechar Oração Eucarística III">
+          Oração Eucarística III
+        </button>
+      </h2>
+      <div id="collapseOIII" class="accordion-collapse collapse" aria-labelledby="headingOIII" data-bs-parent="#accordionOracoes">
+        <div class="accordion-body">
+          ORAÇÃO EUCARÍSTICA III
+
+PE: Na verdade, vós sois santo, ó Deus do universo, e tudo o que criastes proclama o vosso louvor, porque, por Jesus Cristo, vosso filho e Senhor nosso, e pela força do Espírito Santo, dais vida e santidade a todas as coisas e não cessais de reunir o vosso povo, para que vos ofereça em toda parte, do nascer ao pôr-do-sol, um sacrifício perfeito.
+
+T: Santificai e reuni o vosso povo!
+O Presidente estende as mãos e traça a cruz sobre as ofertas.
+
+PE: Por isso, nós vos suplicamos: santificai pelo Espírito Santo as oferendas que vos apresentamos para serem consagradas, a fim de que se tornem o Corpo + e o Sangue de Jesus Cristo, vosso Filho e Senhor nosso, que nos mandou celebrar este mistério.
+
+T: Santificai nossa oferenda, ó Senhor!
+PE: Na noite em que ia ser entregue, ele tomou o pão, deu graças, e o partiu e deu a seus discípulos.
+
+Após elevar a hostia a vista de todos, abaixa-a e faz a genuflexão.
+
+Do mesmo modo, ao fim da ceia, ele tomou o cálice em suas mãos, deu graças novamente o deu a seus discípulos.
+
+Após elevar o cálice a vista de todos, abaixa-o e faz a genuflexão.
+
+Eis o mistério da fé!
+
+T: Anunciamos, Senhor, a vossa morte e proclamamos a vossa ressurreição. Vinde, Senhor Jesus!
+PE: Celebrando agora, ó Pai, a memória do vosso Filho, da sua paixão que nos salva, da sua gloriosa ressurreição e da sua ascensão ao céu, e enquanto esperamos a sua nova vinda, nós vos oferecemos em ação de graças este sacrifício de vida e santidade.
+
+T: Recebei, ó Senhor, a nossa oferta!
+PE: Olhai com bondade a oferenda da vossa Igreja, reconhecei o sacrifício que nos reconcilia convosco e concedei que, alimentando-nos com o Corpo e o Sangue do vosso Filho, sejamos repletos do Espírito Santo e nos tornemos em Cristo um só corpo e um só espírito.
+
+T: Fazei de nós um só corpo e um só espírito!
+PE ou Cc: Que ele faça de nós uma oferenda perfeita para alcançarmos a vida eterna com os vossos santos: a virgem Maria, mãe de Deus, e São José esposo da Virgem Maria, os vossos apóstolos e mártires (santo do dia ou padroeiro) e de todos os santos, que não cessam de interceder por nós na vossa presença.
+
+T: Fazei de nós um perfeita oferenda!
+PE ou Cc: E agora, nós vos suplicamos, ó Pai, que este sacrifício da nossa reconciliação estenda a paz e a salvação ao mundo inteiro. Confirmai na fé e na caridade a vossa Igreja, enquanto caminha neste mundo: o vosso servo o papa N., o nosso bispo N., com os bispos do mundo inteiro, o clero e todo o povo que conquistastes.
+
+T: Lembrai-vos, ó Pai, da vossa Igreja!
+PE ou Cc: Atendei as preces da vossa família, que está aqui, na vossa presença. Reuni em vós, Pai de misericórdia, todos os vossos filhos e filhas dispersos pelo mundo inteiro.
+
+T: Lembrai-vos, ó Pai, dos vossos filhos!
+PE ou Cc: Acolhei com bondade no vosso reino os nossos irmãos e irmãs que partiram desta vida e todos os que morreram na vossa amizade. Unidos a eles, esperamos também nós saciar-nos eternamente da vossa glória, por Cristo, Senhor nosso.
+
+T: A todos saciai com vossa glória!
+PE: Por ele dais ao mundo rodo bem e toda graça.
+Por Cristo, com Cristo, em Cristo, a vós, Deus Pai todo poderoso, na unidade do Espírito Santo, toda a honra e toda a glória, agora e para sempre.
+
+T: Amém!
+        </div>
+      </div>
+    </div>
+
+    <!-- Oração Eucarística IV -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOIV">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOIV" aria-expanded="false" aria-controls="collapseOIV" aria-label="Abrir/fechar Oração Eucarística IV">
+          Oração Eucarística IV
+        </button>
+      </h2>
+      <div id="collapseOIV" class="accordion-collapse collapse" aria-labelledby="headingOIV" data-bs-parent="#accordionOracoes">
+        <div class="accordion-body">
+          ORAÇÃO EUCARÍSTICA IV
+
+PE: O Senhor esteja convosco.
+T: Ele está no meio de nós.
+PE: Corações ao alto.
+T: O nosso coração está em Deus.
+PE: Demos graças ao Senhor, nosso Deus.
+T: É nosso dever e nossa salvação.
+PE: Na verdade, ó Pai, é nosso dever dar-vos graças, é nossa salvação dar-vos glória: só vós sois o Deus vivo e verdadeiro que existis antes de todo o tempo e permaneceis para sempre, habitando em luz inacessível. Mas, porque sois o Deus de bondade e a fonte da vida, fizestes todas as coisas para cobrir de bênçãos as vossas criaturas e a muitos alegrar com a vossa luz.
+
+T: Alegrai-nos, ó Pai, com a vossa luz!
+PE: Eis, pois, diante de vós todos os anjos que vos servem e glorificam sem cessar, contemplando a vossa glória. Com eles, também nós e, por nossa voz, tudo o que criastes celebramos o vosso nome, cantando (dizendo) a uma só voz:
+
+T: Santo, Santo, Santo, Senhor Deus do universo! O céu e a terra proclamam a vossa glória. Hosana nas alturas! Bendito o que vem em nome do Senhor! Hosana nas alturas!
+PE: Nós proclamamos a vossa grandeza, Pai santo, a sabedoria e o amor com que fizestes todas as coisas criastes o homem e a mulher à vossa imagem e lhes confiastes todo o universo, para que, servindo a vós, seu criador, dominassem toda criatura. E, quando pela desobediência perderam a vossa amizade, não os abandonastes ao poder da morte, mas a todos socorrestes com bondade, para que, ao procurar-vos, vos pudessem encontrar.
+
+T: Socorrei, com bondade, os que vos buscam!
+PE: E, ainda mais, oferecestes muitas vezes aliança aos homens e às mulheres e os instruístes pelos profetas na esperança da salvação. E de tal modo, Pai santo, amastes o mundo, que, chegada a plenitude dos tempos, nos enviastes vosso próprio Filho para ser o nosso salvador.
+
+T: Por amor nos enviastes vosso Filho!
+PE: Verdadeiro homem, concebido do Espírito Santo e nascido da virgem Maria, viveu em tudo a condição humana, menos o pecado; anunciou aos pobres a salvação, aos oprimidos, a liberdade, aos tristes, a alegria. E, para realizar o vosso plano de amor, entregou-se à morte e, ressuscitando dos mortos, venceu a morte e renovou vida.
+
+T: Jesus Cristo deu-nos vida por sua morte!
+PE: E, a fim de não mais vivermos para nós, mas para ele, que por nós morreu e ressuscitou, enviou de vós, ó Pai, o Espírito Santo, como primeiro dom aos vossos fiéis para santificar todas as coisas, levando à plenitude a sua obra.
+
+T: Santificai-nos pelo dom do vosso Espírito!
+O Presidente estende as mãos e traça a cruz sobre as ofertas.
+
+PE: Por isso, nós vos pedimos que o mesmo Espírito Santo santifique estas oferendas, a fim de que se tornem o Corpo + e o Sangue Jesus Cristo, vosso Filho e Senhor nosso, para celebrarmos este grande mistério que ele nos deixou em sinal da eterna aliança.
+
+T: Santificai nossa oferenda pelo Espírito.
+PE: Quando, pois, chegou a hora em que por vós, ó Pai, ia ser glorificado, tendo amado os seus que estavam no mundo, amou-os até o fim. Enquanto ceavam, ele tomou o pão, deu graças, e o partiu e deu a seus discípulos.
+
+Após elevar a hostia a vista de todos, abaixa-a e faz a genuflexão.
+
+Do mesmo modo, ele tomou em suas mãos o cálice com vinho, deu graças novamente e o deu a seus discípulos.
+
+Após elevar o cálice a vista de todos, abaixa-o e faz a genuflexão.
+
+Eis o mistério da fé!
+
+T: Anunciamos, Senhor, a vossa morte e proclamamos a vossa ressurreição. Vinde, Senhor Jesus!
+PE: Celebrando, agora, ó Pai, a memória da nossa redenção, anunciamos a morte de Cristo e sua descida entre os mortos, proclamamos a sua ressurreição e ascensão à vossa direita e, esperando a sua vinda gloriosa, nós vos oferecemos o seu corpo e Sangue, sacrifício do vosso agrado e salvação do mundo inteiro.
+
+T: Recebei, ó Senhor, a nossa oferta!
+PE: Olhai, com bondade, o sacrifício que destes à vossa Igreja e concedei aos que vamos participar do mesmo pão e do mesmo cálice que, reunidos pelo Espírito Santo num só corpo, nos tornemos em Cristo um sacrifício vivo para o louvor da vossa glória.
+
+T: Fazei de nós um sacrifício de louvor!
+PE ou Cc: E agora, ó Pai, lembrai-vos de todos pelos quais vos oferecemos este sacrifício: o vosso servo o papa N., o nosso bispo N., os bispos do mundo inteiro, os presbíteros e todos os ministros, os fiéis que, em torno deste altar, vos oferecem este sacrifício, o povo que vos pertence e todos aqueles que vos procuram de coração sincero.
+
+T: Lembrai-vos, ó Pai, dos vossos filhos!
+PE ou Cc: Lembrai-vos também dos que morreram na paz do vosso Cristo e de todos os mortos, dos quais só vós conhecestes a fé.
+
+T: A todos saciai com vossa glória!
+PE ou Cc: E a todos nós, vossos filhos e filhas, concedei, ó Pai de bondade, que, com a virgem Maria, mãe de Deus, e seu beato esposo São José com os apóstolos e todos os santos, possamos alcançar a herança eterna no vosso reino, onde, com todas as criaturas, libertas da corrupção do pecado e da morte, vos glorificaremos por Cristo, Senhor nosso.
+
+T: Concedei-nos o convívio dos eleitos!
+PE: Por ele dais ao mundo todo bem e toda graça.
+Por Cristo, com Cristo, em Cristo, a vós, Deus Pai todo poderoso, na unidade do Espírito Santo, toda a honra e toda a glória, agora e para sempre.
+
+T: Amém!
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Oração Eucarística V -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOV">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOV" aria-expanded="false" aria-controls="collapseOV" aria-label="Abrir/fechar Oração Eucarística V">
+          Oração Eucarística V
+        </button>
+      </h2>
+      <div id="collapseOV" class="accordion-collapse collapse" aria-labelledby="headingOV" data-bs-parent="#accordionOracoes">
+        <div class="accordion-body">
+ORAÇÃO EUCARÍSTICA V
+
+PE: O Senhor esteja convosco.
+T: Ele está no meio de nós.
+PE: Corações ao alto.
+T: O nosso coração está em Deus.
+PE: Demos graças ao Senhor, nosso Deus.
+T: É nosso dever e nossa salvação.
+PE: É justo e nos faz todos ser mais santos louvar a vós, ó Pai, no mundo inteiro, de dia e de noite, agradecendo com Cristo, vosso Filho, nosso irmão. É ele o sacerdote verdadeiro que sempre se oferece por nós todos, mandando que se faça a mesma coisa que fez naquela ceia derradeira. Por isso, aqui estamos bem unidos, louvando e agradecendo com alegria, juntando nossa voz à voz dos anjos e à voz dos santos todos, para cantar (dizer):
+
+T: Santo, Santo, Santo, Senhor Deus do universo! O céu e a terra proclamam a vossa glória. Hosana nas alturas! Bendito o que vem em nome do Senhor! Hosana nas alturas!
+O Presidente estende as mãos e traça a cruz sobre as ofertas.
+
+PE: Senhor, vós que sempre quisestes ficar muito perto de nós, vivendo conosco no Cristo, falando conosco por ele, mandai vosso Espírito Santo, a fim de que as nossas ofertas se mudem no Corpo + e no Sangue de nosso Senhor Jesus Cristo.
+
+T: Mandai vosso Espírito Santo!
+PE: Na noite em que ia ser entregue, ceando com seus apóstolos, Jesus tendo o pão em suas mãos, olhou para o céu e deu graças, partiu o pão e o entregou a seus discípulos.
+
+Após elevar a hostia a vista de todos, abaixa-a e faz a genuflexão.
+
+Do mesmo modo, ao fim da ceia, ele tomou o cálice em suas mãos, deu graças novamente o deu a seus discípulos.
+
+Após elevar o cálice a vista de todos, abaixa-o e faz a genuflexão.
+
+Tudo isto é mistério da fé!
+
+T: Toda vez que se come deste pão, toda vez que se bebe deste vinho, se recorda a paixão de Jesus Cristo e se fica esperando sua volta!
+PE: Recordamos, ó Pai, neste momento, a paixão de Jesus, nosso Senhor, sua ressurreição e ascensão; nós queremos a vós oferecer este pão que alimenta e que dá vida, este vinho que nos salva e dá coragem.
+
+T: Recebei, ó Senhor, a nossa oferta!
+PE: E, quando recebermos pão e vinho, o Corpo e Sangue dele oferecidos, o Espírito nos una num só corpo, para sermos um só povo em seu amor.
+
+T: O Espírito nos uma num só corpo!
+PE: Protegei vossa Igreja que caminha nas estradas do mundo rumo ao céu, cada dia renovando a esperança de chegar junto a vós, na vossa paz.
+
+T: Caminhamos na estrada de Jesus!
+PE ou Cc: Daí ao santo padre, o papa N., ser bem firme na fé, na caridade, e a N., que é bispo desta Igreja, muita luz para guiar o seu rebanho.
+
+T: Caminhamos na estrada de Jesus!
+PE ou Cc: Esperamos entrar na vida eterna com a virgem, mãe de Deus e da Igreja, São José seu esposo, os apóstolos e todos os santos, que na vida souberam amar Cristo e seus irmãos.
+
+T: Esperamos entrar na vida eterna!
+PE ou Cc: A todos os que chamastes para outra vida na vossa amizade e aos marcados com o sinal da fé, abrindo vossos braços, acolhei-os. Que vivam para sempre bem felizes no reino que para todos preparastes.
+
+T: A todos dai a luz que não se apaga!
+PE ou Cc: E a nós, que agora estamos reunidos e somos povo santo e pecador, dai força para construirmos juntos o vosso reino, que também é nosso.
+
+Por Cristo, com Cristo, em Cristo, a vós, Deus Pai todo poderoso, na unidade do Espírito Santo, toda a honra e toda a glória, agora e para sempre.
+
+T: Amém!
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
