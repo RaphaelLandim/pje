@@ -78,7 +78,7 @@
     <div class="carousel-inner">
 
       <!-- Slide 1 -->
-      <a href="{{ url_for('banner1') }}" class="carousel-item active text-decoration-none" style="color: #fff;">
+      <a href="{{ url_for('banner1') }}" class="carousel-item text-decoration-none" style="color: #fff;">
         <img src="{{ url_for('static', filename='bannerhome/banner1.jpg') }}" class="d-block w-100" alt="Banner 1">
         <div class="carousel-caption d-block text-center" style="text-shadow: 1px 1px 4px #000;">
           <h5 style="color: #f0e68c; font-weight: 700;">Clique aqui e saiba como ajudar</h5>
@@ -123,7 +123,7 @@
       </a>
 
       <!-- Slide 5: logo e mensagem -->
-      <a href="https://www.instagram.com/p/DKXisnGKk16/" target="_blank" class="carousel-item animated-gradient text-decoration-none" style="height: 400px;">
+      <a href="https://www.instagram.com/p/DKXisnGKk16/" target="_blank" class="carousel-item active animated-gradient text-decoration-none" style="height: 400px;">
         <div class="d-flex flex-column justify-content-center align-items-center h-100 text-white text-center p-3">
           <img src="{{ url_for('static', filename='logo.png') }}"
                class="mb-3"
@@ -276,15 +276,30 @@
       <!-- Card com imagem -->
       <div class="col d-flex">
         <div class="bg-light rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center">
-          <img src="{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}" alt="Imagem de uma celebração na paróquia"
-               class="img-fluid rounded-4">
+          <img id="img-home" src="{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}" alt="Imagem de uma celebração na paróquia"
+              class="img-fluid rounded-4">
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Script para alteração da imagem imagem -->
+<script>
+  const imagens = [
+    "{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}",
+    "{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}",
+    "{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}"
+  ];
 
+  let index = 0;
+  const imgEl = document.getElementById("img-home");
+
+  setInterval(() => {
+    index = (index + 1) % imagens.length;
+    imgEl.src = imagens[index];
+  }, 5000); // troca a cada 5 segundos
+</script>
 
 
 
@@ -406,11 +421,10 @@
         </h4>
         <p class="text-muted mb-3">Dúvidas? Fale com a secretaria paroquial agora mesmo:</p>
             <a href="https://wa.me/+5521986316988?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações." 
-       target="_blank" 
-       class="btn btn-outline-success btn-lg w-100">
-      <i class="bi bi-whatsapp me-2"></i> (21) 98631-6988
-    </a>
-      
+              target="_blank" 
+              class="btn btn-outline-success btn-lg w-100">
+              <i class="bi bi-whatsapp me-2"></i> (21) 98631-6988
+            </a>      
       </div>
     </div>
 
