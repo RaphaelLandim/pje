@@ -27,10 +27,12 @@
 
 
 
-  <!-- ▸ TOP-BAR (aparece ≥ md) ------------------------------------------------ -->
+  <!-- ▸ TOP-BAR (aparece ≥ md) -tel joga para whatsapp----------------------------------------- -->
   <section class="bg-light py-1 d-none d-md-block small text-muted top-bar">
     <div class="container d-flex justify-content-end gap-3">
-      <span><i class="bi bi-telephone me-1"></i>(21) 98631-6988</span>
+      <a href="https://wa.me/5521986316988" target="_blank" class="text-decoration-none text-muted">
+        <i class="bi bi-telephone me-1"></i>(21) 98631-6988
+      </a>
       <span><i class="bi bi-envelope me-1"></i>pascomijerj@gmail.com</span>
     </div>
   </section>
@@ -48,8 +50,8 @@
         </div>
       </a>
 
-      <!-- toggler com ícone branco, botao a direita em cel, ms-auto -->
-      <button class="navbar-toggler border-0" type="button ms-auto" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
+      <!-- toggler com ícone branco -->
+      <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
         <span class="navbar-toggler-icon" style="filter:invert(1);"></span>
       </button>
 
@@ -59,11 +61,23 @@
           <li class="nav-item"><a class="nav-link {% if current_page == 'sobre' %}active{% endif %}" href="/sobre">Sobre</a></li>
           <li class="nav-item"><a class="nav-link {% if current_page == 'missa' %}active{% endif %}" href="/missa">Missas</a></li>
           <li class="nav-item"><a class="nav-link {% if current_page == 'eventos' %}active{% endif %}" href="/eventos">Eventos</a></li>
-          <li class="nav-item"><a class="nav-link {% if current_page == 'ministerio' %}active{% endif %}" href="/ministerio">Ministérios</a></li>
+       <!--   <li class="nav-item"><a class="nav-link {% if current_page == 'ministerio' %}active{% endif %}" href="/ministerio">Ministérios</a></li> -->
           <li class="nav-item"><a class="nav-link {% if current_page == 'comochegar' %}active{% endif %}" href="/comochegar">Como Chegar</a></li>
           <li class="nav-item"><a class="nav-link {% if current_page == 'folheto' %}active{% endif %}" href="/folheto">Folhetos</a></li>
+                      <!-- Novo menu dropdown "Orações" -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOracoes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Liturgia
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownOracoes">
+                <li><a class="dropdown-item" href="liturgiadiaria">Liturgia Diária</a></li>
+            
+                <li><a class="dropdown-item" href="oeucaristica">Oração Eucarística</a></li>
+              </ul>
+            </li>
           <li class="nav-item"><a class="nav-link {% if current_page == 'contato' %}active{% endif %}" href="/contato">Contato</a></li>
         </ul>
+
 
         <!-- Redes Sociais (desktop) -->
         <div class="d-none d-lg-flex ms-3 gap-3 fs-5">
@@ -114,10 +128,9 @@
 <style>.icon-large {
   font-size: 28px !important;
   /* !important para garantir que não seja sobrescrito */
-}</style>
+}
 
-
-
+</style>
 
 
 </div>
