@@ -25,7 +25,6 @@ body {
   color: #212529;
   background-color: #fff;
   overflow-x: hidden;
-  
 }
 
 /* Títulos */
@@ -43,14 +42,70 @@ p {
 }
 
 /* ===============================
+   HERO / BANNER
+================================== */
+.hero {
+  margin-top: 0 !important;
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.hero img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  animation: zoomInOut 20s ease-in-out infinite;
+}
+
+@keyframes zoomInOut {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ===============================
+   MAIN / CONTEÚDO PRINCIPAL
+================================== */
+main {
+  margin-top: 0 !important;
+  padding-top: 1rem;
+}
+
+/* Evita espaço em branco entre navbar e o primeiro bloco */
+body > section:first-of-type,
+main:first-of-type,
+.hero:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ===============================
+   FOOTER
+================================== */
+footer {
+  background-color: #111;
+  color: #e0e0e0;
+}
+
+footer p, footer a, footer li, footer small {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+footer a:hover {
+  color: #9dc08b;
+  text-decoration: underline;
+}
+
+/* ===============================
    NAVBAR
 ================================== */
 .custom-navbar {
-  background: linear-gradient(to right, #3e4b31, #435037);
+  background: linear-gradient(to right, #3e4b31, #435037);/*cor navbar aqui*/
   border-bottom: 3px solid #9dc08b;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 1030;
-    padding-top: 0.75rem;
+  padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
@@ -100,59 +155,101 @@ p {
   filter: brightness(0) invert(1);
 }
 
-/* ===============================
-   HERO / BANNER
-================================== */
-.hero {
-  margin-top: 0 !important;
-  padding-top: 0;
-  overflow: hidden;
-
+/* Mantém a cor branca no link dropdown-toggle, mesmo quando aberto/focado/ativo */
+.custom-navbar .nav-link.dropdown-toggle {
+  color: #ffffff; /* branco */
+  transition: color 0.3s ease;
 }
 
-.hero img {
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-  animation: zoomInOut 20s ease-in-out infinite;
+/* Quando o dropdown estiver aberto (classe show no pai), mantém branco */
+.custom-navbar .nav-item.dropdown.show > .nav-link.dropdown-toggle {
+  color: #ffffff;
 }
 
-@keyframes zoomInOut {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+/* Remove o foco com cor escura */
+.custom-navbar .nav-link.dropdown-toggle:focus,
+.custom-navbar .nav-link.dropdown-toggle:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-/* ===============================
-   MAIN / CONTEÚDO PRINCIPAL
-================================== */
-main {
-  margin-top: 0 !important;
-  padding-top: 1rem;
+/* Cor e estilo do toggle quando dropdown aberto */
+.custom-navbar .nav-item.dropdown.show > a.nav-link.dropdown-toggle {
+  color: rgba(240, 230, 140, 0.85); /* amarelo clarinho */
+  font-weight: 700;
+  position: relative;
 }
 
-/* Evita espaço em branco entre navbar e o primeiro bloco */
-body > section:first-of-type,
-main:first-of-type,
-.hero:first-of-type {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+/* Underline do toggle aberto */
+.custom-navbar .nav-item.dropdown.show > a.nav-link.dropdown-toggle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(240, 230, 140, 0.85);
 }
 
 /* ===============================
-   FOOTER
+   DROPDOWN MENU
 ================================== */
-footer {
-  background-color: #111;
-  color: #e0e0e0;
+
+/* Fundo do dropdown */
+.custom-navbar .dropdown-menu {
+  background: linear-gradient(to bottom, #3e4b31, #435037);
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  padding: 0.25rem 0;
 }
 
-footer p, footer a, footer li, footer small {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #e0e0e0;
+/* Linha horizontal delicada entre itens do dropdown */
+.custom-navbar .dropdown-menu li:not(:last-child) {
+  border-bottom: 1px solid rgba(67, 80, 55, 0.6); /* tom #435037 com transparência */
 }
 
-footer a:hover {
-  color: #9dc08b;
-  text-decoration: underline;
+/* Links do dropdown */
+.custom-navbar .dropdown-menu a.dropdown-item {
+  color: #d7e0c9; /* texto claro */
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover no link do dropdown */
+.custom-navbar .dropdown-menu a.dropdown-item:hover {
+  background-color: #435037;
+  color: white;
+}
+
+/* Underline animado no hover, só no desktop */
+@media (hover: hover) and (pointer: fine) {
+  .custom-navbar .dropdown-menu a.dropdown-item::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    right: 100%;
+    bottom: 0;
+    height: 2px;
+    background: white;
+    transition: right 0.3s ease;
+  }
+
+  .custom-navbar .dropdown-menu a.dropdown-item:hover::before {
+    right: 0;
+  }
+}
+
+/* Item ativo (selecionado) no dropdown */
+.custom-navbar .dropdown-menu a.dropdown-item.active,
+.custom-navbar .dropdown-menu a.dropdown-item:active {
+  color: rgba(240, 230, 140, 0.85); /* amarelo clarinho */
+  font-weight: 700;
+}
+
+.custom-navbar .dropdown-menu a.dropdown-item.active::before,
+.custom-navbar .dropdown-menu a.dropdown-item:active::before {
+  right: 0;
+  background: rgba(240, 230, 140, 0.85);
+  height: 3px;
 }
