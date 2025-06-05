@@ -20,6 +20,10 @@ def home():
 def sobre():
     return render_template('sobre.html', current_page='sobre')
 
+@app.route('/padroeiro')
+def padroeiro():
+    return render_template('padroeiro.html', current_page='padroeiro')
+
 @app.route('/missa')
 def missa():
     return render_template('missa.html', current_page='missa')
@@ -28,9 +32,9 @@ def missa():
 def eventos():
     return render_template('eventos.html', current_page='eventos')
 
-@app.route('/ministerio')
-def ministerio():
-    return render_template('ministerio.html', current_page='ministerio')
+@app.route('/sacramentos')
+def sacramentos():
+    return render_template('sacramentos.html', current_page='sacramentos')
 
 @app.route('/comochegar')
 def comochegar():
