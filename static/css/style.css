@@ -195,6 +195,20 @@ footer a:hover {
    DROPDOWN MENU
 ================================== */
 
+/* Cor dos itens do dropdown quando ativos */
+.dropdown-menu .dropdown-item.active {
+  background-color: #719779;  /* cor de fundo */
+  color: #686345;             /* cor do texto */
+  font-weight: 600;
+}
+
+/* Cor ao passar o mouse */
+.dropdown-menu .dropdown-item:hover {
+  background-color: #eee;
+  color: #3e4b31;
+}
+
+
 /* Fundo do dropdown */
 .custom-navbar .dropdown-menu {
   background: linear-gradient(to bottom, #3e4b31, #435037);
