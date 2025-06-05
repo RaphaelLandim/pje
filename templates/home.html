@@ -255,51 +255,69 @@
   <div class="container">
     <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">Quem Somos</h2>
     <div class="row g-4 row-cols-1 row-cols-lg-2 align-items-stretch">
-      
-
 
       <!-- Card com texto -->
       <div class="col d-flex">
-        <div class="bg-light rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
+        <article class="bg-light rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
           <p class="lead mb-4">
             A Paróquia Jesus Eucaristia é um espaço de <strong>fé, acolhimento e comunhão</strong>.
             Nossa missão é favorecer o encontro pessoal com Cristo e viver o Evangelho em comunidade.
           </p>
-          <ul class="list-unstyled lh-lg mb-0">
-            <li><i class="bi bi-check-circle text-success me-2"></i>Missas diárias e momentos de Adoração</li>
-            <li><i class="bi bi-check-circle text-success me-2"></i>Confissões, formações e ações sociais</li>
-            <li><i class="bi bi-check-circle text-success me-2"></i>Ambiente seguro e acolhedor para todos</li>
+          <ul class="list-unstyled lh-lg mb-4" aria-label="Destaques da paróquia">
+            <li><i class="bi bi-check-circle text-success me-2" aria-hidden="true"></i>Missas diárias e momentos de Adoração</li>
+            <li><i class="bi bi-check-circle text-success me-2" aria-hidden="true"></i>Confissões, formações e ações sociais</li>
+            <li><i class="bi bi-check-circle text-success me-2" aria-hidden="true"></i>Ambiente seguro e acolhedor para todos</li>
           </ul>
+          <p class="lead mb-0">
+            Clique <a href="{{ url_for('sobre') }}" class="text-decoration-none"><strong>AQUI</strong></a> e conheça um pouco mais de nossa história.
+          </p>
+        </article>
+      </div>
+
+      <!-- Card com imagem (com duas imgs para crossfade) -->
+      <div class="col d-flex">
+        <div class="bg-light rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center position-relative overflow-hidden" style="min-height: 320px;">
+          <img id="img-home-1" src="{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}" alt="Imagem de uma celebração na paróquia"
+              class="img-fluid rounded-4 position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; transition: opacity 2s ease-in-out; opacity: 1;">
+          <img id="img-home-2" src="{{ url_for('static', filename='img/home/quemsomos_home2.jpg') }}" alt="Imagem de uma celebração na paróquia"
+              class="img-fluid rounded-4 position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; transition: opacity 2s ease-in-out; opacity: 0;">
         </div>
       </div>
 
-      <!-- Card com imagem -->
-      <div class="col d-flex">
-        <div class="bg-light rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center">
-          <img id="img-home" src="{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}" alt="Imagem de uma celebração na paróquia"
-              class="img-fluid rounded-4">
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- Script para alteração da imagem imagem -->
 <script>
   const imagens = [
     "{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}",
-    "{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}",
-    "{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}"
+    "{{ url_for('static', filename='img/home/quemsomos_home2.jpg') }}",
+    "{{ url_for('static', filename='img/home/quemsomos_home3.jpg') }}"
   ];
 
   let index = 0;
-  const imgEl = document.getElementById("img-home");
+  const img1 = document.getElementById('img-home-1');
+  const img2 = document.getElementById('img-home-2');
+  let showingImg1 = true;
 
   setInterval(() => {
     index = (index + 1) % imagens.length;
-    imgEl.src = imagens[index];
-  }, 5000); // troca a cada 5 segundos
+
+    if (showingImg1) {
+      img2.src = imagens[index];
+      img2.style.opacity = 1;
+      img1.style.opacity = 0;
+    } else {
+      img1.src = imagens[index];
+      img1.style.opacity = 1;
+      img2.style.opacity = 0;
+    }
+
+    showingImg1 = !showingImg1;
+  }, 5000);
 </script>
+
+
 
 
 
