@@ -1,0 +1,269 @@
+/* ===============================
+   VARIÁVEIS E BASES GERAIS
+================================== */
+:root {
+  --bs-primary: #566547;
+  --bs-primary-rgb: 86, 101, 71;
+  --hero-min-height: 60vh;
+}
+
+/* Reset geral e tipografia */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #212529;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+/* Parágrafos */
+p {
+  font-weight: 400;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   HERO / BANNER
+================================== */
+.hero {
+  margin-top: 0 !important;
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.hero img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  animation: zoomInOut 20s ease-in-out infinite;
+}
+
+@keyframes zoomInOut {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ===============================
+   MAIN / CONTEÚDO PRINCIPAL
+================================== */
+main {
+  margin-top: 0 !important;
+  padding-top: 1rem;
+}
+
+/* Evita espaço em branco entre navbar e o primeiro bloco */
+body > section:first-of-type,
+main:first-of-type,
+.hero:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ===============================
+   FOOTER
+================================== */
+footer {
+  background-color: #111;
+  color: #e0e0e0;
+}
+
+footer p, footer a, footer li, footer small {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+footer a:hover {
+  color: #9dc08b;
+  text-decoration: underline;
+}
+
+/* ===============================
+   NAVBAR
+================================== */
+.custom-navbar {
+  background: linear-gradient(to right, #3e4b31, #435037);/*cor navbar aqui*/
+  border-bottom: 3px solid #9dc08b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1030;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.navbar-brand span {
+  line-height: 1.1;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::before {
+  right: 0;
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.navbar-nav .nav-link.active::before {
+  right: 0;
+  background: #cfcec9;
+  height: 3px;
+}
+
+/* Corrige o ícone do toggler no modo escuro */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Mantém a cor branca no link dropdown-toggle, mesmo quando aberto/focado/ativo */
+.custom-navbar .nav-link.dropdown-toggle {
+  color: #ffffff; /* branco */
+  transition: color 0.3s ease;
+}
+
+/* Quando o dropdown estiver aberto (classe show no pai), mantém branco */
+.custom-navbar .nav-item.dropdown.show > .nav-link.dropdown-toggle {
+  color: #ffffff;
+}
+
+/* Remove o foco com cor escura */
+.custom-navbar .nav-link.dropdown-toggle:focus,
+.custom-navbar .nav-link.dropdown-toggle:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Cor e estilo do toggle quando dropdown aberto */
+.custom-navbar .nav-item.dropdown.show > a.nav-link.dropdown-toggle {
+  color: rgba(240, 230, 140, 0.85); /* amarelo clarinho */
+  font-weight: 700;
+  position: relative;
+}
+
+/* Underline do toggle aberto */
+.custom-navbar .nav-item.dropdown.show > a.nav-link.dropdown-toggle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(240, 230, 140, 0.85);
+}
+
+/* ===============================
+   DROPDOWN MENU
+================================== */
+
+/* Cor dos itens do dropdown quando ativos */
+.dropdown-menu .dropdown-item.active {
+  background-color: #719779;  /* cor de fundo */
+  color: #686345;             /* cor do texto */
+  font-weight: 600;
+}
+
+/* Cor ao passar o mouse */
+.dropdown-menu .dropdown-item:hover {
+  background-color: #eee;
+  color: #3e4b31;
+}
+
+
+/* Fundo do dropdown */
+.custom-navbar .dropdown-menu {
+  background: linear-gradient(to bottom, #3e4b31, #435037);
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  padding: 0.25rem 0;
+}
+
+/* Linha horizontal delicada entre itens do dropdown */
+.custom-navbar .dropdown-menu li:not(:last-child) {
+  border-bottom: 1px solid rgba(67, 80, 55, 0.6); /* tom #435037 com transparência */
+}
+
+/* Links do dropdown */
+.custom-navbar .dropdown-menu a.dropdown-item {
+  color: #d7e0c9; /* texto claro */
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover no link do dropdown */
+.custom-navbar .dropdown-menu a.dropdown-item:hover {
+  background-color: #435037;
+  color: white;
+}
+
+/* Underline animado no hover, só no desktop */
+@media (hover: hover) and (pointer: fine) {
+  .custom-navbar .dropdown-menu a.dropdown-item::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    right: 100%;
+    bottom: 0;
+    height: 2px;
+    background: white;
+    transition: right 0.3s ease;
+  }
+
+  .custom-navbar .dropdown-menu a.dropdown-item:hover::before {
+    right: 0;
+  }
+}
+
+/* Item ativo (selecionado) no dropdown */
+.custom-navbar .dropdown-menu a.dropdown-item.active,
+.custom-navbar .dropdown-menu a.dropdown-item:active {
+  color: rgba(240, 230, 140, 0.85); /* amarelo clarinho */
+  font-weight: 700;
+}
+
+.custom-navbar .dropdown-menu a.dropdown-item.active::before,
+.custom-navbar .dropdown-menu a.dropdown-item:active::before {
+  right: 0;
+  background: rgba(240, 230, 140, 0.85);
+  height: 3px;
+}
