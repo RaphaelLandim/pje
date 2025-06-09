@@ -1,0 +1,86 @@
+<!-- ---------- POPUP DOAÇÃO ---------- -->
+<!-- POPUP FIXO DE DOAÇÃO -->
+<div id="donationPopup" class="popup-box shadow-lg">
+  <button id="closeDonationBtn" class="close-btn" aria-label="Fechar">×</button>
+
+
+
+  <h3 class="fw-bold ">Faça a sua Oferta</h3>
+  <img src="/static/logo/logobra_pop.png"
+       alt="Logo Banco Bradesco" class="bank-logo" />
+  <p class="mb-1 lh-sm">
+    <strong>Agência:</strong> 0814<br>
+    <strong>C/C:</strong> 0078063-4
+  </p>
+
+  <div class="pix-box my-2">
+    <span class="me-1"><strong>Pix:</strong></span>
+    <span id="pixKey">21 98740-4210</span>
+    <button id="copyPix" class="btn btn-sm btn-light border ms-2 px-2 py-0" title="Copiar Pix">📋</button>
+  </div>
+
+<!--  <a href="#"
+     class="btn btn-success w-100 fw-semibold mt-1"
+     style="background:#3e4b31;border:none">Doar agora</a>*/-->
+
+  <p class="faith-quote mt-3">✨ Sua contribuição é a base sólida para um novo lugar de oração ✨</p>
+</div>
+
+<style>
+  /* ---------- POPUP ---------- */
+  .popup-box {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 320px;
+    background: #ffffff;
+    color: #333;
+    padding: 22px 26px 26px;
+    border-left: 5px solid #000028;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    font-family: 'Inter', sans-serif;
+    z-index: 1100;
+    text-align: center;
+
+    /* ANIMAÇÃO DE ENTRADA */
+    transform: translateY(40px);
+    opacity: 0;
+    animation: slideUp 0.8s 1.2s forwards;
+  }
+  @keyframes slideUp {
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 8px; right: 10px;
+    background: transparent; border: 0;
+    font-size: 22px; line-height: 1;
+    color: #666; cursor: pointer;
+  }
+
+  .bank-logo { width: 88px; display: block; margin: 0 auto 10px; }
+
+  .pix-box { font-size: 0.95rem; display: flex; align-items: center; justify-content: center; }
+  #copyPix:hover { background:#f0f0f0; }
+
+  .faith-quote { font-style: italic; font-size: .9rem; color:#555; }
+</style>
+
+<script>
+  /* fecha popup */
+  document.getElementById('closeDonationBtn')
+    .addEventListener('click', () => donationPopup.style.display = 'none');
+
+  /* copia chave Pix */
+  document.getElementById('copyPix').addEventListener('click', () => {
+    navigator.clipboard.writeText(document.getElementById('pixKey').innerText)
+      .then(() => {
+        const btn = document.getElementById('copyPix');
+        const original = btn.innerHTML;
+        btn.innerHTML = '✔️';
+        setTimeout(()=>btn.innerHTML = original, 1500);
+      });
+  });
+</script>

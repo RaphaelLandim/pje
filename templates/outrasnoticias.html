@@ -1,0 +1,64 @@
+{% extends "basepadrao.html" %}
+
+{% block title %}PJE - Outras Notícias{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/outrasnoticias.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<section class="bg-light py-3 border-bottom">
+  <div class="container text-center">
+    <h2 class="mb-5 fw-bold" style="color: var(--cor-azul);">Outras Notícias</h2>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Coluna de notícias -->
+      <div class="col-lg-8">
+        {% set noticias = [
+          ('noticia0.jpg', 'Programação de Junho', 'Celebrações especiais, festas juninas, e encontros de formação neste mês de junho.', 'https://www.instagram.com/p/DKXisnGKk16'),
+          ('noticia1.jpg', 'Festividade de Nossa Senhora de Fátima', 'Celebração solene com procissão luminosa, oração do terço e missa festiva marcaram o dia de Nossa Senhora de Fátima.', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/festividade-de-nossa-senhora-de-fatima.html'),
+          ('noticia2.jpg', 'Criação da Capela N. Sra. das Graças e Sta. Dulce', 'Nova capela será um espaço de fé e devoção no bairro, fortalecendo a presença pastoral.', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/criacao-da-capela-de-n-sra-das-gracas-e.html'),
+          ('noticia3.jpg', 'Sábado de Aleluia', 'Celebração da Vigília Pascal com bênção do fogo, proclamação da Páscoa e batizados.', 'https://paroquiajesuseucaristia.blogspot.com/2025/04/sabado-de-aleluia.html'),
+          ('noticia4.jpg', 'Sexta-feira Santa - Paixão de Cristo', 'Encenação da Paixão de Cristo emocionou fiéis com momentos de reflexão e oração.', 'https://paroquiajesuseucaristia.blogspot.com/2025/04/sexta-feira-santa-paixao-de-cristo.html')
+        ] %}
+
+        {% for noticia in noticias %}
+        <article class="noticia-item">
+          <a href="{{ noticia[3] }}" target="_blank">
+            <img src="{{ url_for('static', filename='noticias/' + noticia[0]) }}" alt="{{ noticia[1] }}" class="img-fluid">
+          </a>
+          <div>
+            <h5>{{ noticia[1] }}</h5>
+            <p>{{ noticia[2] }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+
+      <!-- Coluna da previsão do tempo -->
+      <div class="col-lg-4 mt-5 mt-lg-0">
+        <aside class="previsao-tempo">
+          <h4>Previsão do Tempo</h4>
+          <div>
+            <h5>Rio de Janeiro</h5>
+            <p>Probabilidade de chuva: <strong>97%</strong> (38mm)</p>
+            <p>Manhã • Tarde • Noite</p>
+            <p><strong>24º</strong> máx / <strong>18º</strong> mín</p>
+            <p class="mt-3" style="font-size: 0.9rem; color: var(--texto-claro); opacity: 0.8;">
+              Informações meteorológicas fornecidas pelo Climatempo
+            </p>
+            <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/321/rio-de-janeiro-rj" target="_blank" class="btn btn-outline-light btn-sm">
+              Veja a previsão do Climatempo
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

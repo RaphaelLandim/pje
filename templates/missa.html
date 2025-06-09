@@ -1,0 +1,99 @@
+
+{% extends "basepadrao.html" %}
+{% block title %}PJE - Missas{% endblock %}
+
+
+{% block content %}
+
+<section class="hero position-relative">
+  <img src="{{ url_for('static', filename='img/missa_hero.jpg') }}" alt="Imagem dos horários das missas" class="w-100">
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white" style="background:rgba(0,0,0,.45);">
+    <h1 class="display-5 fw-bold mb-2">Horários das Missas</h1>
+    <p class="lead mb-4">Venha celebrar a Eucaristia conosco</p>
+  </div>
+</section>
+
+
+<section class="missas-section">
+  <div class="container">
+    <p class="missas-intro lead">— Confira os momentos em que celebramos a Santa Missa —<strong>Todos são bem-vindos!</strong></p>
+    <div class="row g-4">
+
+      <!-- 1. Domingo -->
+      <div class="col-12">
+        <div class="card-padrao h-100 p-4 text-center shadow-sm">
+          <i class="bi bi-sun-fill"></i>
+          <h5 class="fw-semibold mb-3">Missas Dominicais</h5>
+          <p class="mb-1"><strong>Sábado:</strong> 🕕 18h00</p>
+          <p class="mb-0"><strong>Domingo:</strong> 🕗 8h00 • 🕙 10h00 • 🕕 18h00</p>
+        </div>
+      </div>
+
+      <!-- 2. Segunda -->
+      <div class="col-md-4">
+        <div class="card-padrao h-100 p-4 text-center shadow-sm">
+          <i class="bi bi-moon-stars-fill"></i>
+          <h5 class="fw-semibold mb-3">Segunda-Feira</h5>
+          <p class="mb-1">Missa das Almas &amp; Procissão das Velas</p>
+          <p class="mb-0">🕕 18h00</p>
+        </div>
+      </div>
+
+      <!-- 3. Terça -->
+      <div class="col-md-4">
+        <div class="card-padrao h-100 p-4 text-center shadow-sm">
+          <i class="bi bi-calendar-week-fill"></i>
+          <h5 class="fw-semibold mb-3">Terça-Feira</h5>
+          <p class="mb-1">Santa Missa</p>
+          <p class="mb-0">🕕 18h00</p>
+        </div>
+      </div>
+
+      <!-- 4. Quarta -->
+      <div class="col-md-4">
+        <div class="card-padrao h-100 p-4 text-center shadow-sm">
+          <i class="bi bi-check-circle-fill"></i>
+          <h5 class="fw-semibold mb-3">Quarta-Feira</h5>
+          <p class="mb-1">Santa Missa: 🕗 8h00</p>
+          <p class="mb-0">Capela N. Sra. das Graças e Sta. Dulce: 🕒 15h00</p>
+        </div>
+      </div>
+
+      <!-- 5. Quinta -->
+      <div class="col-md-4">
+        <div class="card-padrao h-100 p-4 text-center shadow-sm">
+          <i class="bi bi-droplet-half"></i>
+          <h5 class="fw-semibold mb-3">Quinta Eucarística</h5>
+          <p class="mb-1">Santa Missa: 🕗 8h00</p>
+          <p class="mb-1">Terço da Misericórdia: 🕒 15h00</p>
+          <p class="mb-1">Terço Mariano: 🕔 17h00</p>
+          <p class="mb-0">Santa Missa com Benção: 🕕 18h00</p>
+        </div>
+      </div>
+
+      <!-- 6. Sexta -->
+      <div class="col-md-4">
+        <div class="card-padrao h-100 p-4 text-center shadow-sm">
+          <i class="bi bi-book"></i>
+          <h5 class="fw-semibold mb-3">Sexta-Feira</h5>
+          <p class="mb-1">Santa Missa</p>
+          <p class="mb-0">🕕 18h00</p>
+        </div>
+      </div>
+
+      <!-- 7. Sábado -->
+      <div class="col-md-4">
+        <div class="card-padrao h-100 p-4 text-center shadow-sm">
+          <i class="bi bi-heart-fill"></i>
+          <h5 class="fw-semibold mb-3">Sábado</h5>
+          <p class="mb-1">Capela N. Sra. das Graças e Sta. Dulce</p>
+          <p class="mb-0">🕙 10h00</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

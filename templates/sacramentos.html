@@ -1,0 +1,98 @@
+{% extends "basepadrao.html" %}
+
+{% block title %}PJE - Sacramentos{% endblock %}
+
+{% block extra_styles %}
+<style>
+  .sacramentos-section {
+    background: linear-gradient(to bottom, #ffffff, #f4f6fb);
+    padding: 4rem 1rem;
+  }
+
+  .sacramento-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    height: 100%;
+  }
+
+  .sacramento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .icon-sacramento {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    fill: currentColor;
+  }
+
+  .batismo-icon { color: #1E90FF; }          /* azul */
+  .eucaristia-icon { color: #DAA520; }       /* dourado */
+  .crisma-icon { color: #800080; }           /* roxo */
+  .reconciliacao-icon { color: #228B22; }    /* verde */
+  .uncao-icon { color: #FF4500; }             /* laranja/vermelho */
+  .ordem-icon { color: #8B4513; }             /* marrom */
+  .matrimonio-icon { color: #C71585; }        /* rosa escuro */
+
+  .sacramento-card h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--cor-verde-escuro);
+  }
+
+  .sacramento-card p {
+    font-size: 0.95rem;
+    color: #333;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Banner -->
+<section class="hero position-relative">
+  <img src="{{ url_for('static', filename='img/sacramentos-banner.jpg') }}" alt="Imagem dos horários das missas" class="w-100">
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white" style="background:rgba(0,0,0,.45);">
+    <h1 class="display-5 fw-bold mb-2">Sacramentos</h1>
+    <p class="lead mb-4">Sinais visíveis da graça de Deus, instituídos por Cristo e confiados à Igreja.</p>
+  </div>
+</section>
+
+<!-- Conteúdo -->
+<section class="sacramentos-section">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 offset-lg-2">
+        <h2 class="mb-3">Os 7 Sacramentos</h2>
+        <p class="text-muted">A Igreja Católica reconhece sete sacramentos que acompanham o fiel ao longo da vida, desde o nascimento até a vida eterna.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      {% set sacramentos = [
+        {"titulo": "Batismo", "descricao": "Início da vida cristã. Lava o pecado original e torna o fiel membro da Igreja.", "icon_class": "batismo-icon", "svg": """<svg class='icon-sacramento' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><path d='M32 2C18 14 22 32 22 44h20c0-12 4-30-10-42z'/><circle cx='32' cy='44' r='10'/></svg>""" },
+        {"titulo": "Eucaristia", "descricao": "Alimento espiritual: Corpo e Sangue de Cristo presente na Missa.", "icon_class": "eucaristia-icon", "svg": """<svg class='icon-sacramento' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><circle cx='32' cy='32' r='30' stroke='currentColor' stroke-width='4' fill='none'/><path d='M20 32h24M32 20v24' stroke='currentColor' stroke-width='4'/></svg>""" },
+        {"titulo": "Crisma", "descricao": "Confirmação da fé. Recebemos a plenitude do Espírito Santo.", "icon_class": "crisma-icon", "svg": """<svg class='icon-sacramento' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><polygon points='32 4 12 60 52 60' fill='none' stroke='currentColor' stroke-width='4'/></svg>""" },
+        {"titulo": "Reconciliação", "descricao": "Confissão dos pecados. Deus perdoa e reconcilia o fiel consigo e com a Igreja.", "icon_class": "reconciliacao-icon", "svg": """<svg class='icon-sacramento' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><path d='M32 2a30 30 0 1 0 0 60 30 30 0 0 0 0-60zm0 8v20l14 14' stroke='currentColor' stroke-width='4' fill='none'/></svg>""" },
+        {"titulo": "Unção dos Enfermos", "descricao": "Conforto e força espiritual aos doentes ou idosos em perigo de morte.", "icon_class": "uncao-icon", "svg": """<svg class='icon-sacramento' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><path d='M20 44c0-8 24-8 24 0v8H20v-8zM32 12v20' stroke='currentColor' stroke-width='4' fill='none'/></svg>""" },
+        {"titulo": "Ordem", "descricao": "Sacramento que confere o sacerdócio: diáconos, padres e bispos.", "icon_class": "ordem-icon", "svg": """<svg class='icon-sacramento' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><circle cx='32' cy='20' r='12' stroke='currentColor' stroke-width='4' fill='none'/><path d='M32 32v20' stroke='currentColor' stroke-width='4'/></svg>""" },
+        {"titulo": "Matrimônio", "descricao": "União sacramental entre homem e mulher, espelho do amor de Cristo pela Igreja.", "icon_class": "matrimonio-icon", "svg": """<svg class='icon-sacramento' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><path d='M20 32c0-8 12-8 12 0s12 8 12 0-12-20-12-20-12 12-12 20z' stroke='currentColor' stroke-width='4' fill='none'/></svg>""" }
+      ] %}
+      {% for s in sacramentos %}
+      <div class="col-md-6 col-lg-4">
+        <div class="sacramento-card">
+          <div class="{{ s.icon_class }}">{% autoescape false %}{{ s.svg }}{% endautoescape %}</div>
+          <h5>{{ s.titulo }}</h5>
+          <p>{{ s.descricao }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

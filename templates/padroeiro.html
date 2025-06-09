@@ -1,0 +1,121 @@
+{% extends "basepadrao.html" %}
+
+{% block title %}PJE - Corpus Christi{% endblock %}
+
+{% block extra_styles %}
+<style>
+  .section-padding {
+    padding: 3rem 1rem;
+    background: linear-gradient(180deg, #f9faf7 0%, #e6ebdf 100%);
+  }
+
+  .content-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .content-row .image-container,
+  .content-row .text-container {
+    flex: 1 1 300px;
+    max-width: 600px;
+  }
+
+  .image-container img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    object-fit: cover;
+  }
+
+  .text-container {
+    font-family: "Segoe UI", "Georgia", serif;
+    font-size: 1.15rem;
+    color: #000028;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .text-container h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #000028;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .final-text {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-family: "Segoe UI", "Georgia", serif;
+    font-size: 1.25rem;
+    color: #000028;
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  .final-image-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .final-image-container img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero position-relative">
+  <img src="{{ url_for('static', filename='img/padroeiro_hero.jpg') }}" alt="Imagem dos horários das missas" class="w-100">
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white" style="background:rgba(0,0,0,.45);">
+    <h1 class="display-5 fw-bold mb-2">Nosso Padroeiro</h1>
+    <p class="lead mb-4">Jesus Eucarístico, presença viva e real que transforma nossas vidas</p>
+  </div>
+</section>
+
+
+<section class="section2 py-5">
+
+  <!-- 1ª imagem à esquerda com texto -->
+  <div class="content-row">
+    <div class="image-container">
+      <img src="{{ url_for('static', filename='img/padroeiro/padroeiro1.jpg') }}" alt="Jesus Eucarístico 1">
+    </div>
+    <div class="text-container">
+      <h2>Corpus Christi: A Celebração da Presença Real</h2>
+      <p>A festa de Corpus Christi é uma das mais importantes celebrações da Igreja Católica, dedicada a Jesus Eucarístico. Neste dia, relembramos e exaltamos o mistério da Eucaristia, presença real de Cristo entre nós, alimento espiritual e fonte de vida.</p>
+    </div>
+  </div>
+
+  <!-- 2ª imagem à direita com texto -->
+  <div class="content-row">
+    <div class="text-container">
+      <h2>Adoração e Procissão</h2>
+      <p>A procissão de Corpus Christi é um momento de fé e devoção, onde a comunidade se reúne para louvar e venerar Jesus Sacramentado. Com tapetes coloridos, orações e cânticos, manifestamos nosso amor e compromisso com o Senhor presente na Eucaristia.</p>
+    </div>
+    <div class="image-container">
+      <img src="{{ url_for('static', filename='img/padroeiro/padroeiro2.jpg') }}" alt="Jesus Eucarístico 2">
+    </div>
+  </div>
+
+  <!-- Texto final -->
+  <p class="final-text">
+    Que a graça do Corpo e Sangue de Cristo fortaleça nossa fé e nos una cada vez mais em amor e serviço ao próximo. Viva o Santíssimo Sacramento, nossa força e esperança!
+  </p>
+
+  <!-- Imagem final -->
+  <div class="final-image-container">
+    <img src="{{ url_for('static', filename='img/padroeiro/padroeiro3.jpg') }}" alt="Jesus Eucarístico final">
+  </div>
+
+</section>
+{% endblock %}

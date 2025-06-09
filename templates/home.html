@@ -1,0 +1,427 @@
+{% extends "basepadrao.html" %}
+{% block title %}Home – Jesus Eucaristia{% endblock %}
+
+{# ────── ESTILO EXCLUSIVO DA PÁGINA ────── #}
+{% block extra_styles %}
+
+{% endblock %}
+
+{# ────── CONTEÚDO MAIN ────── #}
+{% block content %}
+
+<!-- ========== CAROUSEL ========== -->
+{% include "home/carousel.html" %}
+
+<!-- Seção Últimas Notícias -->
+<section class="section1 py-1">
+  <div class="noticias-banner">
+    <div class="noticias-container">
+      <h2 class="noticias-titulo">Últimas Notícias</h2>
+    </div>
+  </div>
+
+  <div class="container py-4">
+    <div class="row g-4">
+
+      <!-- Notícia destaque -->
+<div class="col-md-6">
+  <div class="card border-0 shadow-sm h-100">
+    <a href="https://www.instagram.com/p/DKqM_8-KTUH/" target="_blank">
+      <img src="{{ url_for('static', filename='noticias/noticia5.jpg') }}" class="card-img-top rounded-top" alt="Vigília de Pentecostes">
+    </a>
+    <div class="card-body">
+      <h4 class="card-title fw-bold" style="color: #37314b;">Vigília de Pentecostes: “Vinde, Espírito Criador!”</h4>
+      <p class="card-text" style="text-align: justify; color: #464568;">
+        Em clima de oração e louvor, a paróquia celebrou a Vigília de Pentecostes com adoração, pregações e a invocação do Espírito Santo, renovando os dons e a missão da comunidade.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Demais notícias -->
+      <div class="col-md-6">
+        <div class="row row-cols-1 row-cols-sm-2 g-4">
+          {% for noticia in [
+            ('noticia0.jpg', 'Programação de Junho', 'https://www.instagram.com/p/DKXisnGKk16'),
+            ('noticia1.jpg', 'Festividade de Nossa Senhora de Fátima', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/festividade-de-nossa-senhora-de-fatima.html'),
+            ('noticia2.jpg', 'Capela N. Sra. das Graças e Sta. Dulce', 'https://paroquiajesuseucaristia.blogspot.com/2025/05/criacao-da-capela-de-n-sra-das-gracas-e.html'),
+            ('noticia3.jpg', 'Sábado de Aleluia', 'https://paroquiajesuseucaristia.blogspot.com/2025/04/sabado-de-aleluia.html')
+          ] %}
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm">
+              <a href="{{ noticia[2] }}" target="_blank">
+                <img src="{{ url_for('static', filename='noticias/' + noticia[0]) }}" 
+                     class="card-img rounded-top noticia-img" 
+                     alt="{{ noticia[1] }}">
+              </a>
+              <div class="card-body p-2">
+                <h6 class="card-title fw-semibold" style="color: #4e4568;">
+                  <a href="{{ noticia[2] }}" target="_blank" style="text-decoration: none; color: inherit;">
+                    {{ noticia[1] }}
+                  </a>
+                </h6>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Botão "Mais Notícias" -->
+        <div class="d-flex justify-content-center mt-4">
+          <a href="{{ url_for('outrasnoticias') }}" class="btn btn-outline-secondary btn-lg w-100">
+            Mais Notícias
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ========== HORÁRIOS DAS CONFISSÕES ========== -->
+<section class="section2 py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">
+      Horários das Missas e Confissões
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1: Missas Dominicais -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center bg-light rounded">
+          <div class="mb-3">
+            <i class="bi bi-sun fs-1 text-warning"></i>
+          </div>
+          <h5 class="fw-bold mb-3 text-primary">Missas Dominicais</h5>
+          <p class="mb-1 fst-italic"><strong>Sábado:</strong> 🕕 18h00</p>
+          <p class="mb-0 fst-italic"><strong>Domingo:</strong> 🕗 8h00 • 🕙 10h00 • 🕕 18h00</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Missas de Segunda a Sexta -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center bg-light rounded">
+          <div class="mb-3">
+            <i class="bi bi-calendar-day fs-1 text-info"></i>
+          </div>
+          <h5 class="fw-bold mb-3 text-primary">Missas de Segunda a Sexta</h5>
+          <p class="mb-1 fs-6"></p>
+          <p class="mb-0 fs-6 text-muted">às 18h00</p>
+        </div>
+      </div>
+
+
+      <!-- Card 4: Confissões Semanais -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center bg-light rounded">
+          <div class="mb-3">
+            <i class="bi bi-heart-pulse fs-1 text-danger"></i>
+          </div>
+          <h5 class="fw-bold mb-3 text-primary">Confissões Semanais</h5>
+          <p class="mb-1 fs-6">Segunda a Sexta-feira</p>
+          <p class="mb-1 fs-6 text-muted">das 15h00 às 17h00</p>
+          <p class="mb-0 fst-italic text-secondary">Outros horários mediante agendamento</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Não esqueça de incluir o Bootstrap Icons no <head> do seu HTML -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
+
+
+
+
+<!-- ========== PRÓXIMOS EVENTOS ========== -->
+<section class="section1 py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">
+      Próximos Eventos
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+      {% for evento in [
+        ('Quinta&nbsp;Eucarística','Toda quinta-feira','bi-easel','Adoração ao Santíssimo durante todo o dia.'),
+        ('Corpus&nbsp;Christi','8&nbsp;de junho de 2025','bi-calendar-heart','Procissão, tapetes e festa paroquial.')
+      ] %}
+      <div class="col-md-6 col-lg-5">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center bg-light rounded">
+          <div class="mb-3">
+            <i class="bi {{ evento[2] }} fs-1 text-primary"></i>
+          </div>
+          <h5 class="fw-bold mb-1">{{ evento[0]|safe }}</h5>
+          <p class="small text-muted mb-2">{{ evento[1]|safe }}</p>
+          <p class="mb-0">{{ evento[3] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== MINISTÉRIOS ========== -->
+<section class="section2 py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">
+      Ministérios e Grupos
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+      {% for minist in [
+        ('bi-music-note-beamed','Ministério de Música','Anima nossas celebrações com louvor e arte.'),
+        ('bi-heart','Pastoral da Família','Acompanha famílias e promove saúde e fé.'),
+        ('bi-people','Grupo de Oração','Louvor, intercessão e partilha da Palavra.')
+      ] %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center border-0 shadow-sm p-4 bg-light rounded-4">
+          <div class="mb-3">
+            <i class="bi {{ minist[0] }} fs-1 text-primary"></i>
+          </div>
+          <h5 class="fw-bold mb-2 text-primary">{{ minist[1] }}</h5>
+          <p class="mb-0 text-secondary">{{ minist[2] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ========== QUEM SOMOS ========== -->
+<section class="sectio1 py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">Quem Somos</h2>
+    <div class="row g-4 row-cols-1 row-cols-lg-2 align-items-stretch">
+
+      <!-- Card com texto -->
+      <div class="col d-flex">
+        <article class="bg-light rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
+          <p class="lead mb-4">
+            A Paróquia Jesus Eucaristia é um espaço de <strong>fé, acolhimento e comunhão</strong>.
+            Nossa missão é favorecer o encontro pessoal com Cristo e viver o Evangelho em comunidade.
+          </p>
+          <ul class="list-unstyled lh-lg mb-4" aria-label="Destaques da paróquia">
+            <li><i class="bi bi-check-circle text-success me-2" aria-hidden="true"></i>Missas diárias e momentos de Adoração</li>
+            <li><i class="bi bi-check-circle text-success me-2" aria-hidden="true"></i>Confissões, formações e ações sociais</li>
+            <li><i class="bi bi-check-circle text-success me-2" aria-hidden="true"></i>Ambiente seguro e acolhedor para todos</li>
+          </ul>
+          <p class="lead mb-0">
+            Clique <a href="{{ url_for('sobre') }}" class="text-decoration-none"><strong>AQUI</strong></a> e conheça um pouco mais de nossa história.
+          </p>
+        </article>
+      </div>
+
+      <!-- Card com imagem (com duas imgs para crossfade) -->
+      <div class="col d-flex">
+        <div class="bg-light rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center position-relative overflow-hidden" style="min-height: 320px;">
+          <img id="img-home-1" src="{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}" alt="Imagem de uma celebração na paróquia"
+              class="img-fluid rounded-4 position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; transition: opacity 2s ease-in-out; opacity: 1;">
+          <img id="img-home-2" src="{{ url_for('static', filename='img/home/quemsomos_home2.jpg') }}" alt="Imagem de uma celebração na paróquia"
+              class="img-fluid rounded-4 position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; transition: opacity 2s ease-in-out; opacity: 0;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const imagens = [
+    "{{ url_for('static', filename='img/home/quemsomos_home.jpg') }}",
+    "{{ url_for('static', filename='img/home/quemsomos_home2.jpg') }}",
+    "{{ url_for('static', filename='img/home/quemsomos_home3.jpg') }}"
+  ];
+
+  let index = 0;
+  const img1 = document.getElementById('img-home-1');
+  const img2 = document.getElementById('img-home-2');
+  let showingImg1 = true;
+
+  setInterval(() => {
+    index = (index + 1) % imagens.length;
+
+    if (showingImg1) {
+      img2.src = imagens[index];
+      img2.style.opacity = 1;
+      img1.style.opacity = 0;
+    } else {
+      img1.src = imagens[index];
+      img1.style.opacity = 1;
+      img2.style.opacity = 0;
+    }
+
+    showingImg1 = !showingImg1;
+  }, 5000);
+</script>
+
+
+
+
+
+
+
+
+
+
+<!-- ========== MENSAGEM DO PADRE ========== -->
+<section class="section2 py-5">
+  <div class="container">
+   <h2 class="text-center mb-4 text-primary fw-bold" style="text-decoration: underline; text-decoration-thickness: 4px;">Mensagem do&nbsp;Padre</h2>
+    <div class="card border-0 mx-auto shadow-sm text-center bg-light" style="max-width:680px;">
+      <div class="card-body p-5">
+        <img src="{{ url_for('static', filename='img/home/padre_home.jpg') }}" alt="Padre Charles Fernando" class="rounded-circle shadow mb-3"
+             style="width:120px;">
+        <blockquote class="blockquote mb-3">
+          <p class="fs-5 fst-italic">
+            “Que a paz de Cristo esteja sempre em nossos corações. Venha celebrar conosco
+            e experimentar o amor de Deus na sua vida.”
+          </p>
+        </blockquote>
+        <footer class="blockquote-footer" style="color: #f6f8f4;">Pe. Charles&nbsp;Fernando</footer>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== oração ========== -->
+<section class="section1 py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 text-primary fw-bold" 
+        style="text-decoration: underline; text-decoration-thickness: 4px;">
+      Oração Alma de Cristo
+    </h2>
+    <div class="row g-4 row-cols-1 row-cols-lg-2 align-items-stretch">
+      
+      <!-- Card com imagem de São Inácio de Loyola -->
+      <div class="col d-flex">
+        <div class="bg-white rounded-4 shadow-sm p-3 w-100 d-flex align-items-center justify-content-center">
+          <img src="{{ url_for('static', filename='img/home/loyola_home.jpg') }}" alt="São Inácio de Loyola"
+               class="img-fluid rounded-4" style="max-height: 350px; object-fit: contain;">
+        </div>
+      </div>
+
+      <!-- Card com texto da explicação + oração -->
+<div class="col d-flex">
+  <div class="bg-ligth rounded-4 shadow-sm p-4 w-100 d-flex flex-column justify-content-center">
+    <p class="lead mb-4">
+      A oração <strong>Alma de Cristo</strong> em latim <em>(Anima Christi)</em> é uma prece tradicional da 
+      Igreja Católica, atribuída a São Inácio de Loyola, fundador da Companhia de Jesus (Jesuítas). É uma súplica por proteção, purificação e união com Jesus, 
+      muito usada antes ou depois da Comunhão como expressão de entrega e intimidade com Cristo.
+    </p>
+
+    <h5 class="fw-bold mb-3">Oração completa — Alma de Cristo (Anima Christi)</h5>
+
+    <!-- Imagem + oração lado a lado em telas médias ou maiores -->
+    <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+      <!-- Oração -->
+      <blockquote class="blockquote fs-6 fst-italic mb-0">
+        Alma de Cristo, santificai-me.<br>
+        Corpo de Cristo, salvai-me.<br>
+        Sangue de Cristo, inebriai-me.<br>
+        Água do lado de Cristo, lavai-me.<br>
+        Paixão de Cristo, fortalecei-me.<br>
+        Ó bom Jesus, ouvi-me.<br>
+        Dentro dos vossos sofrimentos, esconda-me.<br>
+        Não permitais que eu me separe de vós.<br>
+        Do mal inimigo, defendei-me.<br>
+        Na hora da minha morte, chamai-me.<br>
+        E mandai-me ir para vós,<br>
+        Para que com os vossos santos vos louve<br>
+        Por todos os séculos dos séculos. Amém.
+      </blockquote>
+
+            <!-- Imagem -->
+      <img src="{{ url_for('static', filename='img/home/almacristo_home.jpg') }}" 
+           alt="Imagem de Santo Inácio" 
+           class="img-fluid rounded" 
+           style="max-width: 160px; height: auto;">
+
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== NEWSLETTER + CONTATO RÁPIDO + REDES SOCIAIS ========== -->
+<section class="section2 py-5">
+  <div class="row g-4 align-items-stretch">
+
+    <!-- Card: Newsletter -->
+    <div class="col-lg-4">
+      <div class="card h-100 shadow-sm border-0 p-4 bg-light">
+        <h4 class="fw-bold mb-3">
+          <i class="bi bi-envelope-paper me-2 text-primary"></i>Assine nossa Newsletter
+        </h4>
+        <p class="text-muted">Receba reflexões, notícias e agenda semanal da paróquia.</p>
+        <form>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Seu e-mail" required>
+            <button class="btn btn-primary" type="submit">Quero receber</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Card: Contato Rápido -->
+    <div class="col-lg-4">
+      <div class="card h-100 shadow-sm border-0 p-4 bg-light">
+        <h4 class="fw-bold mb-3">
+          <i class="bi bi-chat-dots me-2 text-primary"></i>Contato Rápido
+        </h4>
+        <p class="text-muted mb-3">Dúvidas? Fale com a secretaria paroquial agora mesmo:</p>
+            <a href="https://wa.me/+5521986316988?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações." 
+              target="_blank" 
+              class="btn btn-outline-success btn-lg w-100">
+              <i class="bi bi-whatsapp me-2"></i> (21) 98631-6988
+            </a>      
+      </div>
+    </div>
+
+    <!-- Card: Redes Sociais -->
+    <div class="col-lg-4">
+      <div class="card h-100 shadow-sm border-0 p-4 bg-light">
+        <h4 class="fw-bold mb-3">
+          <i class="bi bi-share me-2 text-primary"></i>Redes Sociais
+        </h4>
+        <p class="text-muted">Acompanhe a paróquia nas plataformas:</p>
+        <div class="d-flex flex-wrap">
+          <a href="https://www.facebook.com/igrejajesuseucaristia/" class="btn btn-outline-primary btn-sm me-2 mb-2">
+            <i class="bi bi-facebook"></i> Facebook
+          </a>
+          <a href="https://www.instagram.com/_jesuseucaristia/" class="btn btn-outline-danger btn-sm me-2 mb-2">
+            <i class="bi bi-instagram"></i> Instagram
+          </a>
+          <a href="https://www.youtube.com/@paroquiajesuseucaristia" class="btn btn-outline-dark btn-sm me-2 mb-2">
+            <i class="bi bi-youtube"></i> YouTube
+          </a>
+          <a href="https://paroquiajesuseucaristia.blogspot.com/2025/" class="btn btn-outline-warning btn-sm mb-2">
+            <i class="bi bi-globe"></i> Blog
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ---------- POPUP DOAÇÃO ---------- -->
+{% include 'popuphome.html' %}  {#Habilita popup #}
+{% endblock %}

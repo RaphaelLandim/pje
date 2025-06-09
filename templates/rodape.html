@@ -1,0 +1,98 @@
+<footer class="bg-dark text-white pt-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Paróquia -->
+      <div class="col-md-3">
+        <h5 class="fw-bold mb-3"><i class="bi bi-building"></i> Paróquia</h5>
+        <p class="small">Servindo com fé, amor e dedicação na missão de evangelizar.</p>
+      </div>
+
+      <!-- Redes Sociais -->
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3"><i class="bi bi-share-fill"></i> Sigam nossas<br>Redes Sociais</h6>
+        <div class="d-flex ms-3 gap-3 redes-sociais">
+          <a href="https://www.facebook.com/igrejajesuseucaristia/" target="_blank" class="facebook" aria-label="Facebook">
+            <i class="bi bi-facebook icon-large"></i>
+          </a>
+          <a href="https://www.instagram.com/_jesuseucaristia/" target="_blank" class="instagram" aria-label="Instagram">
+            <i class="bi bi-instagram icon-large"></i>
+          </a>
+          <a href="https://www.youtube.com/@paroquiajesuseucaristia" target="_blank" class="youtube" aria-label="YouTube">
+            <i class="bi bi-youtube icon-large"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contato -->
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3"><i class="bi bi-person-lines-fill me-2"></i>Contato</h6>
+        <p class="small mb-1"><i class="bi bi-geo-alt me-2"></i>Rua Teixeira Bastos, 38<br>Engenho de Dentro</p>
+        <p class="small mb-1"><i class="bi bi-telephone me-2"></i>(21) 98631-69889</p>
+        <p class="small"><i class="bi bi-envelope me-2"></i>pascomijerj@gmail.com</p>
+      </div>
+
+      <!-- Oferta -->
+      <div class="col-md-4 text-start">
+        <h6 class="fw-bold mb-3"><i class="bi bi-cash-stack me-2"></i>Faça sua Oferta</h6>
+
+        <div class="mb-2">
+          <img src="{{ url_for('static', filename='logo/logobra_home.jpg') }}" alt="Logo Banco Bradesco" class="img-fluid" style="max-height: 40px;">
+        </div>
+
+        <p class="mb-2 lh-sm">
+          <strong>BRADESCO</strong><br>
+          <strong>Agência:</strong> 0814<br>
+          <strong>C/C:</strong> 0078063-4
+        </p>
+
+        <div class="d-flex align-items-center">
+          <strong class="me-2">Pix:</strong>
+          <span id="pixKey" class="me-2" style="user-select: text;">21 98740-4210</span>
+          <button id="copyPix" class="btn btn-sm btn-light border px-2 py-0" title="Copiar Pix" aria-label="Copiar chave Pix">📋</button>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4">
+
+    <p class="text-center small mb-0" id="footerCopyright">
+      &copy; 2025 Paróquia Jesus Eucaristia – Todos os direitos reservados
+    </p>
+  </div>
+</footer>
+
+<style>
+  /* Foco nos links das redes sociais para acessibilidade */
+  .redes-sociais a:focus, .redes-sociais a:hover {
+    outline: 2px solid #f0e68c;
+    outline-offset: 2px;
+    color: #f0e68c !important;
+  }
+
+  .icon-large {
+    font-size: 1.6rem;
+  }
+</style>
+
+<script>
+  // Copiar chave Pix ao clicar no botão
+  document.getElementById('copyPix').addEventListener('click', function() {
+    const pixKey = document.getElementById('pixKey').textContent.trim();
+    navigator.clipboard.writeText(pixKey).then(() => {
+      alert('Chave Pix copiada: ' + pixKey);
+    }).catch(() => {
+      alert('Erro ao copiar a chave Pix');
+    });
+  });
+
+  // Atualiza o ano atual dinamicamente
+  document.addEventListener('DOMContentLoaded', () => {
+    const footerCopyright = document.getElementById('footerCopyright');
+    if (footerCopyright) {
+      const year = new Date().getFullYear();
+      footerCopyright.innerHTML = `&copy; ${year} Paróquia Jesus Eucaristia – Todos os direitos reservados`;
+    }
+  });
+</script>
